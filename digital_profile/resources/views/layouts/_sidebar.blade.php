@@ -1,0 +1,68 @@
+<aside class="main-sidebar sidebar-light-info elevation-4">
+    <a href="{{ url('/') }}" class="brand-link" style="margin-top:10px;">
+        <img src="{{ asset('img/nepal_flag.png') }}" alt="Logo" class="brand-image" style="opacity: .8">
+        &nbsp;&nbsp;&nbsp;
+        <span class="brand-text font-weight-light">स्वागतम्</span>
+    </a>
+    <div class="sidebar">
+        <nav class="mt-4">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? "active" : "" }}">
+                  {{-- <i class="nav-icon fas fa-id-card-alt"></i> --}}
+                  <p>
+                    नगरपालिकाको संक्षिप्त झलक
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview {{ Request::is('municipality*') ? "menu-open" : "" }}">
+                <a href="#" class="nav-link {{ Request::is('municipality*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-hotel"></i>
+                  <p>
+                    नगरपालिकाको चिनारी
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('municipality-geography') }}" class="nav-link {{ Request::is('municipality-geography') ? "active" : "" }}">
+                      <p>१. भौगोलिक अवस्थिति</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('municipality-surface.index') }}" class="nav-link {{ Request::is('municipality-surface*') ? "active" : "" }}">
+                      <p>२. धरातलीय अवस्था</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview {{ Request::is('population*') ? "menu-open" : "" }}">
+                <a href="#" class="nav-link {{ Request::is('population*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>
+                    जनसंख्या विवरण
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('population-distribution.index') }}" class="nav-link {{ Request::is('population-distribution*') ? "active" : "" }}">
+                      <p>१. जनसंख्या वितरणको अवस्था</p>
+                    </a>
+                  </li>
+                  {{-- <li class="nav-item">
+                    <a href="{{ route('population-detail.index') }}" class="nav-link {{ Request::is('population-detail*') ? "active" : "" }}">
+                      <p>२. व्यक्तिगत घटना विवरण</p>
+                    </a>
+                  </li> --}}
+                  <li class="nav-item">
+                    <a href="{{ route('population-density.index') }}" class="nav-link {{ Request::is('population-density*') ? "active" : "" }}">
+                      <p>२. जनघनत्वको अवस्था</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+          </ul>
+        </nav>
+    </div>
+</aside>
