@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Municipality;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LandUsageRequest;
+use App\Http\Requests\Municipality\LandUsageRequest;
 use App\Municipality\LandUsage;
 use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;

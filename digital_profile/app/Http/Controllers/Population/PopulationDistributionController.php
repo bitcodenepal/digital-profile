@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Population;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PopulationDistributionRequest;
+use App\Http\Requests\Population\PopulationDistributionRequest;
 use App\Population\PopulationDistribution;
 use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;

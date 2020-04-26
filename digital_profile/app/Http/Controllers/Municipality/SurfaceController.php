@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Municipality;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SurfaceRequest;
+use App\Http\Requests\Municipality\SurfaceRequest;
 use App\Municipality\Surface;
 use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;
