@@ -32,5 +32,6 @@ Route::get('/municipality-land-usage/delete/{id}', 'Municipality\LandUsageContro
 Route::resource('/population-detail', 'Population\PopulationDetailController');
 Route::resource('/population-distribution', 'Population\PopulationDistributionController');
 Route::resource('/population-density', 'Population\PopulationDensityController');
-
+Route::resource('/population-age', 'Population\PopulationAgeController');
+Route::resource('/mother-tongue', 'Population\MotherTongueController');
 // end of population routes
