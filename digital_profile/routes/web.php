@@ -35,3 +35,9 @@ Route::resource('/population-density', 'Population\PopulationDensityController')
 Route::resource('/population-age', 'Population\PopulationAgeController');
 Route::resource('/mother-tongue', 'Population\MotherTongueController');
 // end of population routes
+
+/**
+ * Routes for Infrastructure tab
+ */
+Route::resource('/infrastructure-road', 'Infrastructure\RoadController');
+//

@@ -9,6 +9,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
                 <a href="{{ route('home') }}" class="nav-link {{ Request::is('home') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-eye"></i>
                   <p>
                     नगरपालिकाको संक्षिप्त झलक
                   </p>
@@ -62,6 +63,22 @@
                   <li class="nav-item">
                     <a href="{{ route('mother-tongue.index') }}" class="nav-link {{ Request::is('mother-tongue*') ? "active" : "" }}">
                       <p>४. मातृभाषाको आधारमा</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview {{ Request::is('infrastructure*') ? "menu-open" : "" }}">
+                <a href="#" class="nav-link {{ Request::is('infrastructure*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-sort-amount-up"></i>
+                  <p>
+                    भौतिक विकासको अवस्था
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('infrastructure-road.index') }}" class="nav-link {{ Request::is('infrastructure-road*') ? "active" : "" }}">
+                      <p>१. सडक मार्गको विद्यमान अवस्था</p>
                     </a>
                   </li>
                 </ul>

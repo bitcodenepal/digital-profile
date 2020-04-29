@@ -40,6 +40,9 @@
         .naya_convert{
  	     	display: none;
  		}
+        .nav-link p{
+            font-size: 15px;
+        }
     </style>
     @yield('custom-styles')
 </head>
