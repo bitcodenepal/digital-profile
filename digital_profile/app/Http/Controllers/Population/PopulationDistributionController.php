@@ -84,6 +84,7 @@ class PopulationDistributionController extends Controller
     public function edit(PopulationDistribution $populationDistribution) {
         if ($populationDistribution) {
             return view('population.population_distribution.edit')
+                ->with('numberConverter', new NumberConverter)
                 ->with('populationDistribution', $populationDistribution);
         } else {
             return view('population.population_distribution.not_found');

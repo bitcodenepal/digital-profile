@@ -1,8 +1,3 @@
-@php
-    use \App\Services\NumberConverter;
-    $numberConverter = new NumberConverter;
-@endphp
-
 <div class="modal-body">
     <div class="form-group row">
         <div class="col-3 text-right mt-2">

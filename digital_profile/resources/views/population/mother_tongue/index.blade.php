@@ -1,8 +1,3 @@
-@php
-    use \App\Services\NumberConverter;
-    $numberConverter = new NumberConverter;
-@endphp
-
 @extends('layouts.app')
 
 @section('content-header')

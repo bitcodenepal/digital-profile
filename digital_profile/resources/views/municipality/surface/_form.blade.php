@@ -1,8 +1,3 @@
-@php
-    use \App\Services\NumberConverter;
-    $numberConverter = new NumberConverter;
-@endphp
-
 <div class="row mb-3">
     <div class="col-12">
         <a href="{{ route('municipality-surface.index') }}" class="btn btn-md btn-info"><i class="fas fa-arrow-circle-left fa-fw"></i> तालिका पृष्ठमा जानुहोस्</a>

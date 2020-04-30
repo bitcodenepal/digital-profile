@@ -23,6 +23,7 @@ class PopulationDensityController extends Controller
 
     public function index() {
         return view('population.population_density.index')
+            ->with('numberConverter', new NumberConverter)
             ->with('populationDensities', PopulationDensity::all());
     }
 
@@ -63,6 +64,7 @@ class PopulationDensityController extends Controller
 
     public function edit(PopulationDensity $populationDensity){
         return view('population.population_density.edit')
+            ->with('numberConverter', new NumberConverter)
             ->with('populationDensity', $populationDensity);
     }
 

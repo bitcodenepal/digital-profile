@@ -24,6 +24,7 @@ class LandUsageController extends Controller
 
     public function index() {
         return view('municipality.land_usage.table')
+            ->with('numberConverter', new NumberConverter)
             ->with('landUsages', LandUsage::all());
     }
 
@@ -61,6 +62,7 @@ class LandUsageController extends Controller
     public function edit($id) {
         $landUsage = LandUsage::find($id);
         return view('municipality.land_usage.edit')
+            ->with('numberConverter', new NumberConverter)
             ->with('landUsage', $landUsage);
     }
 

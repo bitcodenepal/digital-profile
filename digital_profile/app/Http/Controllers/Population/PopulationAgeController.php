@@ -19,6 +19,7 @@ class PopulationAgeController extends Controller
 {
     public function index() {
         return view('population.population_age.index')
+            ->with('numberConverter', new NumberConverter)
             ->with('populationAges', PopulationAge::all());
     }
 
@@ -70,6 +71,7 @@ class PopulationAgeController extends Controller
 
     public function edit(PopulationAge $populationAge) {
         return view('population.population_age.edit')
+            ->with('numberConverter', new NumberConverter)
             ->with('populationAge', $populationAge);
     }
 

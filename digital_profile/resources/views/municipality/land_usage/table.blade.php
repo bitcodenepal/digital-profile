@@ -1,8 +1,3 @@
-@php
-    use \App\Services\NumberConverter;
-    $numberConverter = new NumberConverter;
-@endphp
-
 <div class="row mb-3">
     <div class="col-12">
         <a href="{{ route('municipality-land-usage.create') }}" class="btn btn-md btn-info float-right"><i class="fas fa-plus-circle"></i> नयाँ विवरण थप्नुहोस</a>

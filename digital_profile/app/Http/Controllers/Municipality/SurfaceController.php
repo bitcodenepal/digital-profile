@@ -63,6 +63,7 @@ class SurfaceController extends Controller
         $surface = Surface::find($id);
         if($surface) {
             return view('municipality.surface.edit')
+                ->with('numberConverter', new NumberConverter)
                 ->with('surface', $surface);
         } else {
             return view('municipality.surface.not_found');

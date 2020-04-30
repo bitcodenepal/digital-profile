@@ -6,7 +6,7 @@
             <form action="{{ route('municipality-surface.update', $surface->id) }}" method="post" class="form-horizontal">
                 @csrf
                 {{ method_field('PATCH') }}
-                @include('municipality.surface._form', ['buttonText' => "परिवर्तन गर्नुहोस्", 'surface' => $surface])
+                @include('municipality.surface._form', ['buttonText' => "परिवर्तन गर्नुहोस्", 'surface' => $surface, 'numberConverter' => $numberConverter])
             </form>
         </div>
     </div>

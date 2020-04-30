@@ -20,7 +20,7 @@
                     <form action="{{ route('population-age.update', $populationAge->id) }}" method="post" class="form-horizontal">
                         @csrf
                         {{ method_field('PATCH') }}
-                        @include('population.population_age._form', ['populationAge' => $populationAge, 'buttonText' => "परिवर्तन गर्नुहोस्"])
+                        @include('population.population_age._form', ['populationAge' => $populationAge, 'buttonText' => "परिवर्तन गर्नुहोस्", 'numberConverter' => $numberConverter])
                     </form>
                 </div>
             </div>

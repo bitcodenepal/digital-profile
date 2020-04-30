@@ -19,6 +19,7 @@ class MotherTongueController extends Controller
 {
     public function index() {
         return view('population.mother_tongue.index')
+            ->with('numberConverter', new NumberConverter)
             ->with('motherTongues', MotherTongue::all());
     }
 
@@ -68,6 +69,7 @@ class MotherTongueController extends Controller
 
     public function edit(MotherTongue $motherTongue) {
         return view('population.mother_tongue.edit')
+            ->with('numberConverter', new NumberConverter)
             ->with('motherTongue', $motherTongue);
     }
 

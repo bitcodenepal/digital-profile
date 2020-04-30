@@ -8,5 +8,5 @@
 <form action="{{ route('population-density.update', $populationDensity->id) }}" method="post" class="form-horizontal">
     @csrf
     {{ method_field('PATCH') }}
-    @include('population.population_density._form', ['populationDensity' => $populationDensity, 'buttonText' => "परिवर्तन गर्नुहोस्"])
+    @include('population.population_density._form', ['populationDensity' => $populationDensity, 'buttonText' => "परिवर्तन गर्नुहोस्", 'numberConverter', $numberConverter])
 </form>

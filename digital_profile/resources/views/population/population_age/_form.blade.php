@@ -1,8 +1,3 @@
-@php
-    use \App\Services\NumberConverter;
-    $numberConverter = new NumberConverter;
-@endphp
-
 <div class="form-group row">
     <div class="col-2 mt-2">
         <label for="ward-no">वडा नं छनौट गर्नुहोस्</label>

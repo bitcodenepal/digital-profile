@@ -20,7 +20,7 @@
                     <form action="{{ route('mother-tongue.update', $motherTongue->id) }}" method="post" class="form-horizontal">
                         @csrf
                         {{ method_field('PATCH') }}
-                        @include('population.mother_tongue._form', ['motherTongue' => $motherTongue, 'buttonText' => "परिवर्तन गर्नुहोस्"])
+                        @include('population.mother_tongue._form', ['motherTongue' => $motherTongue, 'buttonText' => "परिवर्तन गर्नुहोस्", 'numberConverter' => $numberConverter])
                     </form>
                 </div>
             </div>

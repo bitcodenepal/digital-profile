@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Infrastructure;
 use App\Infrastructure\Road;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Infrastructure\RoadRequest;
+use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -23,6 +24,7 @@ class RoadController extends Controller
 
     public function index() {
         return view('infrastructure.road.index')
+            ->with('numberConverter', new NumberConverter)
             ->with('roads', Road::all());
     }
 
