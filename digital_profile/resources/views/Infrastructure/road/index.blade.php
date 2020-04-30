@@ -79,6 +79,11 @@
                             </tr>
                         </tfoot>
                     </table>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <span class="text-muted"><small><i>** श्रोत: समूह छलफल तथा जानकार व्यक्ति अन्तरवार्ता, २०७५</i></small></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

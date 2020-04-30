@@ -40,4 +40,5 @@ Route::resource('/mother-tongue', 'Population\MotherTongueController');
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');
+Route::resource('/infrastructure-bridge', 'Infrastructure\BridgeController');
 //

@@ -81,6 +81,11 @@
                       <p>१. सडक मार्गको विद्यमान अवस्था</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('infrastructure-bridge.index') }}" class="nav-link {{ Request::is('infrastructure-bridge*') ? "active" : "" }}">
+                      <p>२. पुल तथा पुलेसाको विवरण </p>
+                    </a>
+                  </li>                  
                 </ul>
               </li>
           </ul>

@@ -4,17 +4,17 @@
     </div>
     <div class="col-4">
         <select name="ward_no" id="ward-no" class="form-control">
-            <option value="1" {{ (isset($road) && $road->ward_no == "१") ? "selected" : "" }}>१</option>
-            <option value="2" {{ (isset($road) && $road->ward_no == "२") ? "selected" : "" }}>२</option>
-            <option value="3" {{ (isset($road) && $road->ward_no == "३") ? "selected" : "" }}>३</option>
-            <option value="4" {{ (isset($road) && $road->ward_no == "४") ? "selected" : "" }}>४</option>
-            <option value="5" {{ (isset($road) && $road->ward_no == "५") ? "selected" : "" }}>५</option>
-            <option value="6" {{ (isset($road) && $road->ward_no == "६") ? "selected" : "" }}>६</option>
-            <option value="7" {{ (isset($road) && $road->ward_no == "७") ? "selected" : "" }}>७</option>
-            <option value="8" {{ (isset($road) && $road->ward_no == "८") ? "selected" : "" }}>८</option>
-            <option value="9" {{ (isset($road) && $road->ward_no == "९") ? "selected" : "" }}>९</option>
-            <option value="10" {{ (isset($road) && $road->ward_no == "१०") ? "selected" : "" }}>१०</option>
-            <option value="11" {{ (isset($road) && $road->ward_no == "११") ? "selected" : "" }}>११</option>
+            <option value="1" {{ (isset($road) && $road->ward_no == "1") ? "selected" : "" }}>१</option>
+            <option value="2" {{ (isset($road) && $road->ward_no == "2") ? "selected" : "" }}>२</option>
+            <option value="3" {{ (isset($road) && $road->ward_no == "3") ? "selected" : "" }}>३</option>
+            <option value="4" {{ (isset($road) && $road->ward_no == "4") ? "selected" : "" }}>४</option>
+            <option value="5" {{ (isset($road) && $road->ward_no == "5") ? "selected" : "" }}>५</option>
+            <option value="6" {{ (isset($road) && $road->ward_no == "6") ? "selected" : "" }}>६</option>
+            <option value="7" {{ (isset($road) && $road->ward_no == "7") ? "selected" : "" }}>७</option>
+            <option value="8" {{ (isset($road) && $road->ward_no == "8") ? "selected" : "" }}>८</option>
+            <option value="9" {{ (isset($road) && $road->ward_no == "9") ? "selected" : "" }}>९</option>
+            <option value="10" {{ (isset($road) && $road->ward_no == "10") ? "selected" : "" }}>१०</option>
+            <option value="11" {{ (isset($road) && $road->ward_no == "11") ? "selected" : "" }}>११</option>
         </select>
     </div>
 </div>
