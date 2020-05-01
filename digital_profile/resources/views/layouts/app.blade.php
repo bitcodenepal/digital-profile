@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/custom_css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom_css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom_css/OverlayScrollbars.min.css') }}">
 
     <style>
         .btn, .card, .modal-content {
@@ -80,6 +81,7 @@
 
     <script src="{{ asset('js/custom_js/main.js') }}"></script>
     <script src="{{ asset('js/custom_js/toastr.min.js') }}"></script>
+    <script src="{{ asset('js/custom_js/OverlayScrollbars.min.js') }}"></script>
     
     @yield('custom-scripts')
 

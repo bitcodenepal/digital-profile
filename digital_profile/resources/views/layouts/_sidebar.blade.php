@@ -85,7 +85,12 @@
                     <a href="{{ route('infrastructure-bridge.index') }}" class="nav-link {{ Request::is('infrastructure-bridge*') ? "active" : "" }}">
                       <p>२. पुल तथा पुलेसाको विवरण </p>
                     </a>
-                  </li>                  
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('infrastructure-path.index') }}" class="nav-link {{ Request::is('infrastructure-path*') ? "active" : "" }}">
+                      <p>३. पैदल मार्ग सम्बन्धि विवरण </p>
+                    </a>
+                  </li>                    
                 </ul>
               </li>
           </ul>
