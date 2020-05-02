@@ -111,7 +111,7 @@
 
         jQuery(function() {
             $("#create-detail").click(function() {
-                $.get("{{ route('population-density.create') }}", function(response) {
+                $.get("{{ route('density.create') }}", function(response) {
                     $("#create-detail-modal .modal-content").html(response);
                     $('#create-detail-modal').modal({
                         display: 'show',
@@ -123,7 +123,7 @@
 
             $(".edit-detail").click(function() {
                 let id = this.dataset.id,
-                    url = "{{ route('population-density.edit', ':id') }}";
+                    url = "{{ route('density.edit', ':id') }}";
 
                 url = url.replace(":id", id);
 
@@ -141,7 +141,7 @@
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,
-                        url = "{{ route('population-density.destroy', ':id') }}";
+                        url = "{{ route('density.destroy', ':id') }}";
 
                     url = url.replace(":id", id);
 

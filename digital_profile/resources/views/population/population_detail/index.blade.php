@@ -10,7 +10,7 @@
             <h1 class="text-dark">जनसंख्या विवरणको तालिका</h1>
         </div>
         <div class="col-6">
-            <a href="{{ route('population-detail.create') }}" class="btn btn-md btn-info float-right"><i class="fas fa-plus-circle fa-fw"></i> विवरण थप्नुहोस्</a>
+            <a href="{{ route('detail.create') }}" class="btn btn-md btn-info float-right"><i class="fas fa-plus-circle fa-fw"></i> विवरण थप्नुहोस्</a>
         </div>
     </div>
 @endsection
@@ -20,7 +20,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover table-bordered table-sm" id="population-table">
+                    <table class="table table-hover table-bordered table-sm" id="table">
                         <thead>
                             <tr>
                                 <th>ksafnk</th>
@@ -49,7 +49,7 @@
     <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
     <script>
         jQuery(function($) {
-            $("#population-table").DataTable();
+            $("#table").DataTable();
         });
     </script>
 @endsection

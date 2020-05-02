@@ -49,7 +49,7 @@ class PopulationDensityController extends Controller
             DB::commit();
 
             Session::flash('success', "जनघनत्वको विवरण सफलतापूर्वक थपियो");
-            return redirect()->route('population-density.index');
+            return redirect()->route('density.index');
         } catch (\Exception $error) {
             DB::rollBack();
             Session::flash('error', $error->getMessage());
@@ -62,16 +62,18 @@ class PopulationDensityController extends Controller
         return redirect()->back();
     }
 
-    public function edit(PopulationDensity $populationDensity){
+    public function edit($id){
+        $populationDensity = PopulationDensity::find($id);
         return view('population.population_density.edit')
             ->with('numberConverter', new NumberConverter)
             ->with('populationDensity', $populationDensity);
     }
 
-    public function update(PopulationDensityRequest $request, PopulationDensity $populationDensity, NumberConverter $numberConverter) {
+    public function update(PopulationDensityRequest $request, $id, NumberConverter $numberConverter) {
         $density = (float) $request->population/(float) $request->area;
         $density = round($density, 2);
         try {
+            $populationDensity = PopulationDensity::find($id);
             DB::beginTransaction();
 
             $populationDensity->ward_no = $numberConverter->devanagari($request->ward_no);
@@ -85,7 +87,7 @@ class PopulationDensityController extends Controller
             DB::commit();
 
             Session::flash('success', "जनघनत्वको विवरण सफलतापूर्वक परिवर्तन गरियो");
-            return redirect()->route('population-density.index');
+            return redirect()->route('density.index');
         } catch (\Exception $error) {
             DB::rollBack();
             Session::flash('error', $error->getMessage());
@@ -93,7 +95,8 @@ class PopulationDensityController extends Controller
         }
     }
 
-    public function destroy(PopulationDensity $populationDensity) {
+    public function destroy($id) {
+        $populationDensity = PopulationDensity::find($id);
         if ($populationDensity) {
             $populationDensity->delete();
             return response("वडा नं ".$populationDensity->ward_no. " को विवरण सफलतापूर्वक हटाइएको छ");

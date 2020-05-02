@@ -67,14 +67,16 @@ class MotherTongueController extends Controller
         return redirect()->back();
     }
 
-    public function edit(MotherTongue $motherTongue) {
+    public function edit($id) {
+        $motherTongue = MotherTongue::find($id);
         return view('population.mother_tongue.edit')
             ->with('numberConverter', new NumberConverter)
             ->with('motherTongue', $motherTongue);
     }
 
-    public function update(MotherTongueRequest $request, MotherTongue $motherTongue, NumberConverter $numberConverter) {
+    public function update(MotherTongueRequest $request, $id, NumberConverter $numberConverter) {
         try {
+            $motherTongue = MotherTongue::find($id);
             $slicedArray = array_slice($request->all(), 3);
             $total = array_sum($slicedArray);
 
@@ -107,7 +109,8 @@ class MotherTongueController extends Controller
         }
     }
 
-    public function destroy(MotherTongue $motherTongue) {
+    public function destroy($id) {
+        $motherTongue = MotherTongue::find($id);
         if ($motherTongue) {
             $motherTongue->delete();
             return response("वडा नं ".$motherTongue->ward_no. " को विवरण सफलतापूर्वक हटाइएको छ");

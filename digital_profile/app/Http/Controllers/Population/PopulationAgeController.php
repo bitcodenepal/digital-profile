@@ -54,7 +54,7 @@ class PopulationAgeController extends Controller
             DB::commit();
 
             Session::flash('success', "विवरण सफलतापूर्वक थपियो");
-            return redirect()->route('population-age.index');
+            return redirect()->route('age.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -69,14 +69,16 @@ class PopulationAgeController extends Controller
         return redirect()->back();
     }
 
-    public function edit(PopulationAge $populationAge) {
+    public function edit($id) {
+        $populationAge = PopulationAge::find($id);
         return view('population.population_age.edit')
             ->with('numberConverter', new NumberConverter)
             ->with('populationAge', $populationAge);
     }
 
-    public function update(PopulationAgeRequest $request, PopulationAge $populationAge, NumberConverter $numberConverter) {
+    public function update(PopulationAgeRequest $request, $id, NumberConverter $numberConverter) {
         try {
+            $populationAge = PopulationAge::find($id);
             DB::beginTransaction();
 
             $populationAge->ward_no = $numberConverter->devanagari($request->ward_no);
@@ -101,7 +103,7 @@ class PopulationAgeController extends Controller
             DB::commit();
 
             Session::flash('success', "विवरण सफलतापूर्वक परिवर्तन गरियो");
-            return redirect()->route('population-age.index');
+            return redirect()->route('age.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -110,7 +112,8 @@ class PopulationAgeController extends Controller
         }
     }
 
-    public function destroy(PopulationAge $populationAge) {
+    public function destroy($id) {
+        $populationAge = PopulationAge::find($id);
         if ($populationAge) {
             $populationAge->delete();
             return response("वडा नं ".$populationAge->ward_no. " को विवरण सफलतापूर्वक हटाइएको छ");

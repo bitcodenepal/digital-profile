@@ -5,7 +5,7 @@
     </button>
 </div>
 
-<form action="{{ route('population-density.store') }}" method="post" class="form-horizontal">
+<form action="{{ route('density.store') }}" method="post" class="form-horizontal">
     @csrf
     @include('population.population_density._form', ['buttonText' => "विवरण थप्नुहोस"])
 </form>

@@ -29,10 +29,10 @@
     </div>
     <div class="form-group row">
         <div class="col-3 text-right mt-2">
-            <label for="population-percent">जनसंख्या प्रतिशत</label>
+            <label for="percent">जनसंख्या प्रतिशत</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="population-percent" placeholder="जनसंख्या प्रतिशत लेख्नुहोस्"  name="population_percent" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population_percent) }}" @endif step=".01" required>
+            <input type="number" class="form-control" id="percent" placeholder="जनसंख्या प्रतिशत लेख्नुहोस्"  name="population_percent" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population_percent) }}" @endif step=".01" required>
         </div>
     </div>
     <div class="form-group row">

@@ -68,7 +68,7 @@ class PopulationDistributionController extends Controller
             DB::commit();
 
             Session::flash('success', "जनसंख्या वितरण सफलतापूर्वक थपियो");
-            return redirect()->route('population-distribution.index');
+            return redirect()->route('distribution.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -81,7 +81,8 @@ class PopulationDistributionController extends Controller
         return redirect()->back();
     }
 
-    public function edit(PopulationDistribution $populationDistribution) {
+    public function edit($id) {
+        $populationDistribution = PopulationDistribution::find($id);
         if ($populationDistribution) {
             return view('population.population_distribution.edit')
                 ->with('numberConverter', new NumberConverter)
@@ -91,8 +92,9 @@ class PopulationDistributionController extends Controller
         }
     }
 
-    public function update(PopulationDistributionRequest $request, PopulationDistribution $populationDistribution, NumberConverter $numberConverter) {
+    public function update(PopulationDistributionRequest $request, $id, NumberConverter $numberConverter) {
         try {
+            $populationDistribution = PopulationDistribution::find($id);
             DB::beginTransaction();
 
             $populationDistribution->ward_no = $numberConverter->devanagari($request->ward_no);
@@ -110,7 +112,7 @@ class PopulationDistributionController extends Controller
             DB::commit();
 
             Session::flash('success', "जनसंख्या वितरण सफलतापूर्वक परिवर्तन गरियो");
-            return redirect()->route('population-distribution.index');
+            return redirect()->route('distribution.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -119,7 +121,8 @@ class PopulationDistributionController extends Controller
         }
     }
 
-    public function destroy(PopulationDistribution $populationDistribution) {
+    public function destroy($id) {
+        $populationDistribution = PopulationDistribution::find($id);
         if ($populationDistribution) {
             $populationDistribution->delete();
             return response("वडा नं ".$populationDistribution->ward_no. " को विवरण सफलतापूर्वक हटाइएको छ");

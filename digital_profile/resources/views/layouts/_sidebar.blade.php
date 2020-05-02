@@ -46,23 +46,28 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ route('population-distribution.index') }}" class="nav-link {{ Request::is('population-distribution*') ? "active" : "" }}">
+                    <a href="{{ route('distribution.index') }}" class="nav-link {{ Request::is('*distribution*') ? "active" : "" }}">
                       <p>१. जनसंख्या वितरणको अवस्था</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('population-density.index') }}" class="nav-link {{ Request::is('population-density*') ? "active" : "" }}">
+                    <a href="{{ route('density.index') }}" class="nav-link {{ Request::is('*density*') ? "active" : "" }}">
                       <p>२. जनघनत्वको अवस्था</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('population-age.index') }}" class="nav-link {{ Request::is('population-age*') ? "active" : "" }}">
+                    <a href="{{ route('age.index') }}" class="nav-link {{ Request::is('*age*') ? "active" : "" }}">
                       <p>३. उमेर तथा लिंगको आधारमा</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('mother-tongue.index') }}" class="nav-link {{ Request::is('mother-tongue*') ? "active" : "" }}">
+                    <a href="{{ route('mother-tongue.index') }}" class="nav-link {{ Request::is('*mother-tongue*') ? "active" : "" }}">
                       <p>४. मातृभाषाको आधारमा</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('religion.index') }}" class="nav-link {{ Request::is('*religion*') ? "active" : "" }}">
+                      <p>५. धर्म अनुसार विवरण</p>
                     </a>
                   </li>
                 </ul>

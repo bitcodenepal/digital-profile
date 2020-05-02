@@ -6,7 +6,7 @@
             <h1 class="text-dark">उमेर तथा लिङ्गको आधारमा जनसंख्या विवरण तालिका</h1>
         </div>
         <div class="col-5">
-            <a href="{{ route('population-age.create') }}" class="btn btn-md btn-info float-right" id="create-detail"><i class="fas fa-plus-circle fa-fw"></i> विवरण थप्नुहोस्</a>
+            <a href="{{ route('age.create') }}" class="btn btn-md btn-info float-right" id="create-detail"><i class="fas fa-plus-circle fa-fw"></i> विवरण थप्नुहोस्</a>
         </div>
     </div>
 @endsection
@@ -79,7 +79,7 @@
                                     <td>{{ $populationAge->male_seventy }}</td>
                                     <td>{{ $populationAge->female_seventy }}</td>
                                     <td>
-                                        <a href="{{ route('population-age.edit', $populationAge->id) }}" class="btn btn-xs btn-primary edit-detail" title="सम्पादन गर्नुहोस्"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('age.edit', $populationAge->id) }}" class="btn btn-xs btn-primary edit-detail" title="सम्पादन गर्नुहोस्"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-xs btn-danger delete-detail" title="हटाउनुहोस्" data-id={{ $populationAge->id }}><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -147,7 +147,7 @@
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,
-                        url = "{{ route('population-age.destroy', ':id') }}";
+                        url = "{{ route('age.destroy', ':id') }}";
 
                     url = url.replace(":id", id);
 

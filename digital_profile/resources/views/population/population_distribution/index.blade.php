@@ -16,7 +16,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover table-bordered table-sm" id="population-table">
+                    <table class="table table-hover table-bordered table-sm" id="table">
                         <thead class="text-center bg-gradient-danger">
                             <tr>
                                 <th rowspan="2">#</th>
@@ -103,7 +103,7 @@
         jQuery(function($) {
 
             $("#create-detail").click(function() {
-                $.get("{{ route('population-distribution.create') }}", function(response) {
+                $.get("{{ route('distribution.create') }}", function(response) {
                     $("#create-detail-modal .modal-content").html(response);
                     $('#create-detail-modal').modal({
                         display: 'show',
@@ -115,7 +115,7 @@
 
             $(".edit-detail").click(function() {
                 let id = this.dataset.id,
-                    url = "{{ route('population-distribution.edit', ':id') }}";
+                    url = "{{ route('distribution.edit', ':id') }}";
 
                 url = url.replace(":id", id);
 
@@ -133,7 +133,7 @@
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,
-                        url = "{{ route('population-distribution.destroy', ':id') }}";
+                        url = "{{ route('distribution.destroy', ':id') }}";
 
                     url = url.replace(":id", id);
 
