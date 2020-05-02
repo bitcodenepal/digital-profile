@@ -90,6 +90,11 @@
                     <a href="{{ route('infrastructure-path.index') }}" class="nav-link {{ Request::is('infrastructure-path*') ? "active" : "" }}">
                       <p>३. पैदल मार्ग सम्बन्धि विवरण </p>
                     </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('infrastructure-fuel-gas.index') }}" class="nav-link {{ Request::is('infrastructure-fuel-gas*') ? "active" : "" }}">
+                      <p>४. इन्धन उपयोग विवरण </p>
+                    </a>
                   </li>                    
                 </ul>
               </li>

@@ -42,4 +42,7 @@ Route::resource('/mother-tongue', 'Population\MotherTongueController');
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');
 Route::resource('/infrastructure-bridge', 'Infrastructure\BridgeController');
 Route::resource('/infrastructure-path', 'Infrastructure\PathController');
+Route::resource('/infrastructure-fuel-gas', 'Infrastructure\Fuel\GasController');
+Route::resource('/infrastructure-fuel-electricity', 'Infrastructure\Fuel\ElectricityController');
+Route::get('/infrastructure-fuel-electricity/delete/{id}', 'Infrastructure\Fuel\ElectricityController@delete')->name('infrastructure-fuel-electricity.delete');
 //
