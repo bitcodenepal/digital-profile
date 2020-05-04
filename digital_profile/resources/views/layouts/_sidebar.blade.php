@@ -70,6 +70,11 @@
                       <p>५. धर्म अनुसार विवरण</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('caste.index') }}" class="nav-link {{ Request::is('*caste*') ? "active" : "" }}">
+                      <p>६. जातिगत आधारमा विवरण</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item has-treeview {{ Request::is('infrastructure*') ? "menu-open" : "" }}">

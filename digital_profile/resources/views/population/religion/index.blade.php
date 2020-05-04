@@ -20,15 +20,15 @@
                     <table class="table table-bordered table-hover table-sm">
                         <thead class="text-center bg-gradient-danger">
                             <tr>
-                                <td>वडा नम्बर</td>
-                                <td>हिन्दु</td>
-                                <td>बौद्ध</td>
-                                <td>ईस्लाम</td>
-                                <td>इसाई</td>
-                                <td>किराँत</td>
-                                <td>जैन</td>
-                                <td>अन्य</td>
-                                <td>उल्लेख नभएको</td>
+                                <th>वडा नम्बर</th>
+                                <th>हिन्दु</th>
+                                <th>बौद्ध</th>
+                                <th>ईस्लाम</th>
+                                <th>इसाई</th>
+                                <th>किराँत</th>
+                                <th>जैन</th>
+                                <th>अन्य</th>
+                                <th>उल्लेख नभएको</th>
                                 <th>जम्मा</th>
                                 <th>कार्यहरू</th>
                             </tr>
