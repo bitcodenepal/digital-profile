@@ -37,6 +37,7 @@ Route::prefix('population')->group(function() {
     Route::resource('/mother-tongue', 'Population\MotherTongueController');
     Route::resource('/religion', 'Population\ReligionController');
     Route::resource('/caste', 'Population\CasteController');
+    Route::resource('/handicap', 'Population\HandicapController');
 });
 // end of population routes
 

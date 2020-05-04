@@ -75,6 +75,11 @@
                       <p>६. जातिगत आधारमा विवरण</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('handicap.index') }}" class="nav-link {{ Request::is('*handicap*') ? "active" : "" }}">
+                      <p>७. अपाङ्गताको आधारमा विवरण</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item has-treeview {{ Request::is('infrastructure*') ? "menu-open" : "" }}">
