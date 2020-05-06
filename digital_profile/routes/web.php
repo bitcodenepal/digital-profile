@@ -38,6 +38,7 @@ Route::prefix('population')->group(function() {
     Route::resource('/caste', 'Population\CasteController');
     Route::resource('/handicap', 'Population\HandicapController');
     Route::resource('/marriage', 'Population\MarriageController');
+    Route::resource('/event', 'Population\EventController');
 });
 // end of population routes
 
