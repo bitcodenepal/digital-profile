@@ -56,7 +56,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('age.index') }}" class="nav-link {{ Request::is('*age*') ? "active" : "" }}">
+                    <a href="{{ route('age.index') }}" class="nav-link {{ Request::is('*/age*') ? "active" : "" }}">
                       <p>३. उमेर तथा लिंगको आधारमा</p>
                     </a>
                   </li>
