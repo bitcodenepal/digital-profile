@@ -30,7 +30,6 @@ Route::get('/municipality-land-usage/delete/{id}', 'Municipality\LandUsageContro
  * Routes for population tab
  */
 Route::prefix('population')->group(function() {
-    Route::resource('/detail', 'Population\PopulationDetailController');
     Route::resource('/distribution', 'Population\PopulationDistributionController');
     Route::resource('/density', 'Population\PopulationDensityController');
     Route::resource('/age', 'Population\PopulationAgeController');
@@ -38,6 +37,7 @@ Route::prefix('population')->group(function() {
     Route::resource('/religion', 'Population\ReligionController');
     Route::resource('/caste', 'Population\CasteController');
     Route::resource('/handicap', 'Population\HandicapController');
+    Route::resource('/marriage', 'Population\MarriageController');
 });
 // end of population routes
 

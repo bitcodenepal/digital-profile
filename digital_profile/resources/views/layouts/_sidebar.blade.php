@@ -80,6 +80,11 @@
                       <p>७. अपाङ्गताको आधारमा विवरण</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('marriage.index') }}" class="nav-link {{ Request::is('*marriage*') ? "active" : "" }}">
+                      <p>८. वैवाहिक स्थितिको विवरण</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item has-treeview {{ Request::is('infrastructure*') ? "menu-open" : "" }}">

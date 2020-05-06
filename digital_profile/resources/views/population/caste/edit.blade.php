@@ -6,7 +6,7 @@
             <a href="{{ route('caste.index') }}" class="btn btn-md btn-info" title="तालिका पृष्ठमा फिर्ता जानुहोस्"><i class="fas fa-arrow-circle-left fa-fw"></i> फिर्ता जानुहोस्</a>
         </div>
         <div class="col-10">
-            <h1 class="text-dark">जातिगत आधारमा जनसंख्या विवरण थप्नुहोस्</h1>
+            <h1 class="text-dark">जातिगत आधारमा जनसंख्या परिवर्तन गर्नुहोस्</h1>
         </div>
     </div>
 @endsection
