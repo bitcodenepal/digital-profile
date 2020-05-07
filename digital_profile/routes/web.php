@@ -43,6 +43,14 @@ Route::prefix('population')->group(function() {
 // end of population routes
 
 /**
+ * Routes for economy tab
+ */
+Route::prefix('economy')->group(function() {
+    Route::resource('/occupation', 'Economy\OccupationController');
+});
+// end of economy routes
+
+/**
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');

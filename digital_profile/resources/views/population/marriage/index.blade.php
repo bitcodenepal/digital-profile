@@ -70,7 +70,8 @@
                             @endforeach
                         </tbody>
                         <tfoot class="text-center bg-gradient-secondary">
-                            <td>जम्मा</td>
+                            <tr>
+                                <td>जम्मा</td>
                                 <td>{{ $numberConverter->devanagari($unmarried) }}</td>
                                 <td>{{ $numberConverter->devanagari($single) }}</td>
                                 <td>{{ $numberConverter->devanagari($multiple) }}</td>
@@ -82,6 +83,7 @@
                                 <td>{{ $numberConverter->devanagari($notIncluded) }}</td>
                                 <td>{{ $numberConverter->devanagari($total) }}</td>
                                 <td></td>
+                            </tr>
                         </tfoot>
                     </table>
                 </div>

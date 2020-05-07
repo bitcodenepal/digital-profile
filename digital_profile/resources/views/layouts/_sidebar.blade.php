@@ -17,6 +17,7 @@
               </li>
               @include('layouts.menu.municipality')
               @include('layouts.menu.population')
+              @include('layouts.menu.economy')
               @include('layouts.menu.infrastructure')
           </ul>
         </nav>

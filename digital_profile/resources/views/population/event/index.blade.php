@@ -58,13 +58,15 @@
                             @endforeach
                         </tbody>
                         <tfoot class="text-center bg-gradient-secondary">
-                            <td>जम्मा</td>
+                            <tr>
+                                <td>जम्मा</td>
                                 <td>{{ $numberConverter->devanagari($birth) }}</td>
                                 <td>{{ $numberConverter->devanagari($death) }}</td>
                                 <td>{{ $numberConverter->devanagari($marriage) }}</td>
                                 <td>{{ $numberConverter->devanagari($immigration) }}</td>
                                 <td>{{ $numberConverter->devanagari($emigration) }}</td>
                                 <td></td>
+                            </tr>
                         </tfoot>
                     </table>
                     <div class="row">
