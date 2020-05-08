@@ -12,5 +12,10 @@
           <p>१. प्रमुख पेशा अनुसार</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('special-education.index') }}" class="nav-link {{ Request::is('*special-education*') ? "active" : "" }}">
+          <p>२. प्राविधिक तथा बिशेष दक्षता भएका</p>
+        </a>
+      </li>
     </ul>
 </li>
