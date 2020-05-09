@@ -48,6 +48,7 @@ Route::prefix('population')->group(function() {
 Route::prefix('economy')->group(function() {
     Route::resource('/occupation', 'Economy\OccupationController');
     Route::resource('/special-education', 'Economy\SpecialEducationController');
+    Route::resource('/industry', 'Economy\IndustryController');
 });
 // end of economy routes
 

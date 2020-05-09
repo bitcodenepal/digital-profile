@@ -17,5 +17,10 @@
           <p>२. प्राविधिक तथा बिशेष दक्षता भएका</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('industry.index') }}" class="nav-link {{ Request::is('*industry*') ? "active" : "" }}">
+          <p>३. उद्योग सम्बन्धी विवरण</p>
+        </a>
+      </li>
     </ul>
 </li>
