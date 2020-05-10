@@ -53,6 +53,22 @@ Route::prefix('economy')->group(function() {
 // end of economy routes
 
 /**
+ * Routes for agriculture tab
+ */
+Route::prefix('agriculture')->group(function() {
+    Route::resource('/irrigation', 'Agriculture\IrrigationController');
+});
+// end of agriculture routes
+
+/**
+ * Routes for agriculture tab
+ */
+Route::prefix('tourism')->group(function() {
+    Route::resource('/place', 'Tourism\PlaceController');
+});
+// end of agriculture routes
+
+/**
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');
@@ -61,4 +77,4 @@ Route::resource('/infrastructure-path', 'Infrastructure\PathController');
 Route::resource('/infrastructure-fuel-gas', 'Infrastructure\Fuel\GasController');
 Route::resource('/infrastructure-fuel-electricity', 'Infrastructure\Fuel\ElectricityController');
 Route::get('/infrastructure-fuel-electricity/delete/{id}', 'Infrastructure\Fuel\ElectricityController@delete')->name('infrastructure-fuel-electricity.delete');
-//
+// end of infrastructure routes

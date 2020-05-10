@@ -2,7 +2,6 @@
 
 @section('custom-styles')
     <link rel="stylesheet" href="{{ asset('css/custom_css/dataTables.bootstrap.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/custom_css/buttons.dataTables.min.css') }}"> --}}
 @endsection
 
 @section('content-header')
@@ -103,32 +102,11 @@
 
     <script src="{{ asset('js/custom_js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
-    {{-- <script src="{{ asset('js/custom_js/buttons.dataTables.min.js') }}"></script>
-    <script src="{{ asset('js/custom_js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('js/custom_js/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('js/custom_js/vfs_fonts.js') }}"></script> --}}
     <script>
 
         jQuery(function($) {
 
-            $("#path-table").DataTable()
-            // let table = $("#path-table").DataTable();
-
-            // new $.fn.dataTable.Buttons(table, {
-            //     buttons : [
-            //         {
-            //             "extend": "pdf",
-            //             "text": "Export as PDF",
-            //             "filename": "Report Name",
-            //             "className": "btn btn-green",
-            //             "charset": "utf-8",
-            //             "bom": "true",
-            //             init: function(api, node, config) {
-            //                 $(node).removeClass("btn-default");
-            //             }
-            //         }
-            //     ]
-            // }).container().appendTo($('#dt-buttons'));
+            $("#path-table").DataTable();
 
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {

@@ -18,6 +18,8 @@
               @include('layouts.menu.municipality')
               @include('layouts.menu.population')
               @include('layouts.menu.economy')
+              @include('layouts.menu.agriculture')
+              @include('layouts.menu.tourism')
               @include('layouts.menu.infrastructure')
           </ul>
         </nav>
