@@ -61,12 +61,20 @@ Route::prefix('agriculture')->group(function() {
 // end of agriculture routes
 
 /**
- * Routes for agriculture tab
+ * Routes for tourism tab
  */
 Route::prefix('tourism')->group(function() {
     Route::resource('/place', 'Tourism\PlaceController');
 });
-// end of agriculture routes
+// end of tourism routes
+
+/**
+ * Routes for education tab
+ */
+Route::prefix('education')->group(function() {
+    Route::resource('/literacy', 'Education\LiteracyController');
+});
+// end of education routes
 
 /**
  * Routes for Infrastructure tab
