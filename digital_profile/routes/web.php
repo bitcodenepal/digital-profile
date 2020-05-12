@@ -77,6 +77,14 @@ Route::prefix('education')->group(function() {
 // end of education routes
 
 /**
+ * Routes for health tab
+ */
+Route::prefix('health')->group(function() {
+    Route::resource('/hospital', 'Health\HospitalController');
+});
+// end of health routes
+
+/**
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');
