@@ -85,6 +85,14 @@ Route::prefix('health')->group(function() {
 // end of health routes
 
 /**
+ * Routes for hygiene tab
+ */
+Route::prefix('hygiene')->group(function() {
+    Route::resource('/water', 'Hygiene\WaterController');
+});
+// end of hygiene routes
+
+/**
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');

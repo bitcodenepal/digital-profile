@@ -22,6 +22,7 @@
               @include('layouts.menu.tourism')
               @include('layouts.menu.education')
               @include('layouts.menu.health')
+              @include('layouts.menu.hygiene')
               @include('layouts.menu.infrastructure')
           </ul>
         </nav>
