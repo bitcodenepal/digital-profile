@@ -67,7 +67,7 @@ class HospitalController extends Controller
             DB::commit();
 
             Session::flash('success', "विवरण सफलतापूर्वक परिवर्तन गरियो");
-            return redirect()->route('literacy.index');
+            return redirect()->route('hospital.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
