@@ -32,6 +32,14 @@
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('forest.index') }}" class="nav-link {{ Request::is('forest*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-tree"></i>
+                  <p>
+                    वन क्षेत्रको अवस्था
+                  </p>
+                </a>
+              </li>
           </ul>
         </nav>
     </div>
