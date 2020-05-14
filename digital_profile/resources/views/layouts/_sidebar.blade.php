@@ -24,6 +24,14 @@
               @include('layouts.menu.health')
               @include('layouts.menu.hygiene')
               @include('layouts.menu.infrastructure')
+              <li class="nav-item">
+                <a href="{{ route('miscellaneous.index') }}" class="nav-link {{ Request::is('miscellaneous*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-atom"></i>
+                  <p>
+                    युवा, खेलकुद र मनोरंजन
+                  </p>
+                </a>
+              </li>
           </ul>
         </nav>
     </div>

@@ -1,49 +1,43 @@
 <?php
 
-namespace App\Http\Controllers\Hygiene;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Hygiene\WaterRequest;
-use App\Hygiene\Water;
+use App\Http\Requests\MiscellaneousRequest;
+use App\Miscellaneous;
 use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 /**
- * class WaterController
- * 
- * @package: App\Http\Controllers\Hygiene
+ * class MiscellaneousController
+ * @package: App\Http\Controllers
  * @author: Shashank Jha <shashankj677@gmail.com>
  */
 
-class WaterController extends Controller
+class MiscellaneousController extends Controller
 {
     public function __construct() {
         $this->middleware('auth');
     }
 
     public function index() {
-        return view('hygiene.water.index')
-            ->with('waters', Water::all())
+        return view('miscellaneous.index')
+            ->with('miscellaneous', Miscellaneous::all())
             ->with('numberConverter', new NumberConverter);
     }
 
     public function create() {
-        return view('hygiene.water.create');
+        return view('miscellaneous.create');
     }
 
-    public function store(WaterRequest $request) {
+    public function store(MiscellaneousRequest $request) {
         try {
-            $validatedArray = $request->validated();
-            $slicedArray = array_slice($validatedArray, 1);
-            $validatedArray['total'] = array_sum($slicedArray);
-
             DB::beginTransaction();
-            Water::create($validatedArray);
+            Miscellaneous::create($request->validated());
             DB::commit();
 
             Session::flash('success', 'विवरण सफलतापूर्वक थपियो');
-            return redirect()->route('water.index');
+            return redirect()->route('miscellaneous.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -58,25 +52,21 @@ class WaterController extends Controller
     }
 
     public function edit($id) {
-        $water = Water::findOrFail($id);
-        return view('hygiene.water.edit')
-            ->with('water', $water);
+        $miscellaneous = Miscellaneous::findOrFail($id);
+        return view('miscellaneous.edit')
+            ->with('miscellaneous', $miscellaneous);
     }
 
-    public function update(WaterRequest $request, $id) {
+    public function update(MiscellaneousRequest $request, $id) {
         try {
-            $water = Water::findOrFail($id);
-
-            $validatedArray = $request->validated();
-            $slicedArray = array_slice($validatedArray, 1);
-            $validatedArray['total'] = array_sum($slicedArray);
+            $miscellaneous = Miscellaneous::findOrFail($id);
 
             DB::beginTransaction();
-            $water->update($validatedArray);
+            $miscellaneous->update($request->validated());
             DB::commit();
 
             Session::flash('success', "विवरण सफलतापूर्वक परिवर्तन गरियो");
-            return redirect()->route('water.index');
+            return redirect()->route('miscellaneous.index');
 
         } catch (\Exception $error) {
             DB::rollBack();
@@ -86,10 +76,10 @@ class WaterController extends Controller
     }
 
     public function destroy($id) {
-        $water = Water::find($id);
-        if ($water) {
-            $water->delete();
-            return response("वडा नम्बर " .$water->ward_no. " को विवरण सफलतापूर्वक हटाइएको छ");
+        $miscellaneous = Miscellaneous::find($id);
+        if ($miscellaneous) {
+            $miscellaneous->delete();
+            return response($miscellaneous->name. " को विवरण सफलतापूर्वक हटाइएको छ");
         } else {
             return response("डाटा हटाउन असमर्थ");
         }

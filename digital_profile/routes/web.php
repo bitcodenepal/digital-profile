@@ -92,6 +92,9 @@ Route::prefix('hygiene')->group(function() {
 });
 // end of hygiene routes
 
+// ** miscellaneous route
+Route::resource('/miscellaneous', 'MiscellaneousController');
+
 /**
  * Routes for Infrastructure tab
  */
