@@ -99,6 +99,14 @@ Route::resource('/miscellaneous', 'MiscellaneousController');
 Route::resource('/forest', 'ForestController');
 
 /**
+ * Routes for disaster tab
+ */
+Route::prefix('disaster')->group(function() {
+    Route::resource('/house', 'Disaster\HouseController');
+});
+// end of disaster routes
+
+/**
  * Routes for Infrastructure tab
  */
 Route::resource('/infrastructure-road', 'Infrastructure\RoadController');

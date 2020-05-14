@@ -40,6 +40,7 @@
                   </p>
                 </a>
               </li>
+              @include('layouts.menu.disaster')
           </ul>
         </nav>
     </div>
