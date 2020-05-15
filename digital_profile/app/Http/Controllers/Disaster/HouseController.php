@@ -43,7 +43,7 @@ class HouseController extends Controller
             DB::commit();
 
             Session::flash('success', 'विवरण सफलतापूर्वक थपियो');
-            return redirect('house.index');
+            return redirect()->route('house.index');
         } catch (\Exception $error) {
             DB::rollBack();
             Session::flash('error', $error->getMessage());
