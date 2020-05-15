@@ -24,6 +24,7 @@
               @include('layouts.menu.health')
               @include('layouts.menu.hygiene')
               @include('layouts.menu.infrastructure')
+              @include('layouts.menu.disaster')
               <li class="nav-item">
                 <a href="{{ route('miscellaneous.index') }}" class="nav-link {{ Request::is('miscellaneous*') ? "active" : "" }}">
                   <i class="nav-icon fas fa-atom"></i>
@@ -40,7 +41,14 @@
                   </p>
                 </a>
               </li>
-              @include('layouts.menu.disaster')
+              <li class="nav-item">
+                <a href="{{ route('communication.index') }}" class="nav-link {{ Request::is('communication*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-satellite-dish"></i>
+                  <p>
+                    सञ्चार तथा प्रविधि
+                  </p>
+                </a>
+              </li>
           </ul>
         </nav>
     </div>

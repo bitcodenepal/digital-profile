@@ -92,20 +92,6 @@ Route::prefix('hygiene')->group(function() {
 });
 // end of hygiene routes
 
-// ** miscellaneous route
-Route::resource('/miscellaneous', 'MiscellaneousController');
-
-// ** miscellaneous route
-Route::resource('/forest', 'ForestController');
-
-/**
- * Routes for disaster tab
- */
-Route::prefix('disaster')->group(function() {
-    Route::resource('/house', 'Disaster\HouseController');
-});
-// end of disaster routes
-
 /**
  * Routes for Infrastructure tab
  */
@@ -116,3 +102,20 @@ Route::resource('/infrastructure-fuel-gas', 'Infrastructure\Fuel\GasController')
 Route::resource('/infrastructure-fuel-electricity', 'Infrastructure\Fuel\ElectricityController');
 Route::get('/infrastructure-fuel-electricity/delete/{id}', 'Infrastructure\Fuel\ElectricityController@delete')->name('infrastructure-fuel-electricity.delete');
 // end of infrastructure routes
+
+/**
+ * Routes for disaster tab
+ */
+Route::prefix('disaster')->group(function() {
+    Route::resource('/house', 'Disaster\HouseController');
+});
+// end of disaster routes
+
+// ** miscellaneous route
+Route::resource('/miscellaneous', 'MiscellaneousController');
+
+// ** forest route
+Route::resource('/forest', 'ForestController');
+
+// ** communication route
+Route::resource('/communication', 'CommunicationController');
