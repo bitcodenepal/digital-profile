@@ -12,5 +12,10 @@
           <p>१. सिंचाइ सुबिधा सम्बन्धी विवरण</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('crop.index') }}" class="nav-link {{ Request::is('*crop*') ? "active" : "" }}">
+          <p>२. अन्न, दलहन र तेलहन बाली</p>
+        </a>
+      </li>
     </ul>
 </li>
