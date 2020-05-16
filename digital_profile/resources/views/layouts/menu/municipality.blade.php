@@ -1,6 +1,6 @@
 <li class="nav-item has-treeview {{ Request::is('municipality*') ? "menu-open" : "" }}">
     <a href="#" class="nav-link {{ Request::is('municipality*') ? "active" : "" }}">
-      <i class="nav-icon fas fa-hotel"></i>
+      <i class="nav-icon fas fa-landmark"></i>
       <p>
         नगरपालिकाको चिनारी
         <i class="right fas fa-angle-left"></i>

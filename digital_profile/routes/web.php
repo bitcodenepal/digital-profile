@@ -111,6 +111,14 @@ Route::prefix('disaster')->group(function() {
 });
 // end of disaster routes
 
+/**
+ * Routes for accommodation tab
+ */
+Route::prefix('accommodation')->group(function() {
+    Route::resource('/foundation', 'Accommodation\FoundationController');
+});
+// end of accommodation routes
+
 // ** miscellaneous route
 Route::resource('/miscellaneous', 'MiscellaneousController');
 

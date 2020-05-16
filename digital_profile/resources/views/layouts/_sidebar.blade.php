@@ -25,6 +25,7 @@
               @include('layouts.menu.hygiene')
               @include('layouts.menu.infrastructure')
               @include('layouts.menu.disaster')
+              @include('layouts.menu.accommodation')
               <li class="nav-item">
                 <a href="{{ route('miscellaneous.index') }}" class="nav-link {{ Request::is('miscellaneous*') ? "active" : "" }}">
                   <i class="nav-icon fas fa-atom"></i>
