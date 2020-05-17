@@ -17,5 +17,10 @@
           <p>२. अन्न, दलहन र तेलहन बाली</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('fruit.index') }}" class="nav-link {{ Request::is('*fruit*') ? "active" : "" }}">
+          <p>३. फलफुल, तरकारी र नगदे बाली</p>
+        </a>
+      </li>
     </ul>
 </li>
