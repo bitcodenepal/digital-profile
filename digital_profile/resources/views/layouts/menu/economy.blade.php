@@ -32,5 +32,10 @@
           <p>५. वार्षिक आम्दानी अनुसार</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('trade.index') }}" class="nav-link {{ Request::is('*trade*') ? "active" : "" }}">
+          <p>६. आयात तथा निर्यातको अवस्था</p>
+        </a>
+      </li>
     </ul>
 </li>
