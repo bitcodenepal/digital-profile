@@ -24,7 +24,7 @@
             <label for="population">जनसंख्या</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="population" placeholder="जनसंख्या लेख्नुहोस्"  name="population" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population) }}" @endif required>
+            <input type="number" class="form-control" id="population" placeholder="जनसंख्या लेख्नुहोस्"  name="population" min="0" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population) }}" @endif required>
         </div>
     </div>
     <div class="form-group row">
@@ -32,7 +32,7 @@
             <label for="percent">जनसंख्या प्रतिशत</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="percent" placeholder="जनसंख्या प्रतिशत लेख्नुहोस्"  name="population_percent" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population_percent) }}" @endif step=".01" required>
+            <input type="number" class="form-control" id="percent" placeholder="जनसंख्या प्रतिशत लेख्नुहोस्"  name="population_percent" min="0" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->population_percent) }}" @endif step=".01" required>
         </div>
     </div>
     <div class="form-group row">
@@ -40,7 +40,7 @@
             <label for="area">क्षेत्रफल (वकिमी)</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="area" placeholder="क्षेत्रफल (वकिमी) लेख्नुहोस्"  name="area" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->area) }}" @endif step=".01" required>
+            <input type="number" class="form-control" id="area" placeholder="क्षेत्रफल (वकिमी) लेख्नुहोस्"  name="area" min="0" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->area) }}" @endif step=".01" required>
         </div>
     </div>
     <div class="form-group row">
@@ -48,7 +48,7 @@
             <label for="area-percent">क्षेत्रफल प्रतिशत</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="area-percent" placeholder="क्षेत्रफल प्रतिशत लेख्नुहोस्"  name="area_percent" min="1" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->area_percent) }}" @endif step=".01" required>
+            <input type="number" class="form-control" id="area-percent" placeholder="क्षेत्रफल प्रतिशत लेख्नुहोस्"  name="area_percent" min="0" @if(isset($populationDensity)) value="{{ $numberConverter->english($populationDensity->area_percent) }}" @endif step=".01" required>
         </div>
     </div>
 </div>

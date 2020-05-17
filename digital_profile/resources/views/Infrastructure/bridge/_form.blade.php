@@ -39,7 +39,7 @@
         <label for="date">निर्मित साल</label>
     </div>
     <div class="col-2">
-        <input type="number" name="date" id="date" class="form-control" placeholder="निर्मित साल" min="1" @if(isset($bridge)) value="{{ $bridge->date }}" @endif pattern="[0-9]{4}" required>
+        <input type="number" name="date" id="date" class="form-control" placeholder="निर्मित साल" min="0" @if(isset($bridge)) value="{{ $bridge->date }}" @endif pattern="[0-9]{4}" required>
     </div>
 </div>
 
@@ -63,7 +63,7 @@
         <label for="length">लम्बाई(मि.)</label>
     </div>
     <div class="col-2">
-        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(मि.)" min="1" @if(isset($bridge)) value="{{ $bridge->length }}" @endif step = ".01" required>
+        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(मि.)" min="0" @if(isset($bridge)) value="{{ $bridge->length }}" @endif step = ".01" required>
     </div>
 </div>
 
@@ -73,14 +73,14 @@
     </div>
     <div class="col-2">
         <a rel="nofollow" href="http://naya.com.np"; title="Nepali Social Network" class="naya_convert">naya.com.np</a>
-        <input type="text" name="type" id="type" class="form-control" placeholder="प्रकार" min="1" @if(isset($bridge)) value="{{ $bridge->type }}" @endif required>
+        <input type="text" name="type" id="type" class="form-control" placeholder="प्रकार" min="0" @if(isset($bridge)) value="{{ $bridge->type }}" @endif required>
     </div>
     <div class="col-2 mt-2 text-right">
         <label for="condition">अवस्था</label>
     </div>
     <div class="col-2">
         <a rel="nofollow" href="http://naya.com.np"; title="Nepali Social Network" class="naya_convert">naya.com.np</a>
-        <input type="text" name="condition" id="condition" class="form-control" placeholder="अवस्था" min="1" @if(isset($bridge)) value="{{ $bridge->condition }}" @endif required>
+        <input type="text" name="condition" id="condition" class="form-control" placeholder="अवस्था" min="0" @if(isset($bridge)) value="{{ $bridge->condition }}" @endif required>
     </div>
 </div>
 <hr>

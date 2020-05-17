@@ -24,7 +24,7 @@
             <label for="household-number">घरपरिवार संख्या</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="household-number" placeholder="घरपरिवार संख्या लेख्नुहोस्"  name="household_number" min="1" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->household_number) }}" @endif required>
+            <input type="number" class="form-control" id="household-number" placeholder="घरपरिवार संख्या लेख्नुहोस्"  name="household_number" min="0" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->household_number) }}" @endif required>
         </div>
     </div>
     <div class="form-group row">
@@ -32,7 +32,7 @@
             <label for="male-number">पुरुष संख्या</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="male-number" placeholder="पुरुष संख्या लेख्नुहोस्"  name="male_number" min="1" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->male_number) }}" @endif required>
+            <input type="number" class="form-control" id="male-number" placeholder="पुरुष संख्या लेख्नुहोस्"  name="male_number" min="0" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->male_number) }}" @endif required>
         </div>
     </div>
     <div class="form-group row">
@@ -40,7 +40,7 @@
             <label for="female-number">महिला संख्या</label>
         </div>
         <div class="col-9">
-            <input type="number" class="form-control" id="female-number" placeholder="महिला संख्या लेख्नुहोस्"  name="female_number" min="1" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->female_number) }}" @endif required>
+            <input type="number" class="form-control" id="female-number" placeholder="महिला संख्या लेख्नुहोस्"  name="female_number" min="0" @if(isset($populationDistribution)) value="{{ $numberConverter->english($populationDistribution->female_number) }}" @endif required>
         </div>
     </div>
 </div>

@@ -51,13 +51,13 @@
         <label for="length">लम्बाई(कि. मि.)</label>
     </div>
     <div class="col-2">
-        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(कि. मि.)" min="1" @if(isset($path)) value="{{ $path->length }}" @endif step = ".01" required>
+        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(कि. मि.)" min="0" @if(isset($path)) value="{{ $path->length }}" @endif step = ".01" required>
     </div>
     <div class="col-2 mt-2 text-right">
         <label for="population">लाभान्वित जनसंख्या</label>
     </div>
     <div class="col-2">
-        <input type="number" name="population" id="population" class="form-control" placeholder="लाभान्वित जनसंख्या" min="1" @if(isset($path)) value="{{ $path->population }}" @endif required>
+        <input type="number" name="population" id="population" class="form-control" placeholder="लाभान्वित जनसंख्या" min="0" @if(isset($path)) value="{{ $path->population }}" @endif required>
     </div>
 </div>
 <hr>

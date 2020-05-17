@@ -51,20 +51,20 @@
         <label for="length">लम्बाई(कि. मि.)</label>
     </div>
     <div class="col-2">
-        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(कि. मि.)" min="1" @if(isset($road)) value="{{ $road->length }}" @endif step = ".01" required>
+        <input type="number" name="length" id="length" class="form-control" placeholder="लम्बाई(कि. मि.)" min="0" @if(isset($road)) value="{{ $road->length }}" @endif step = ".01" required>
     </div>
     <div class="col-2 mt-2 text-right">
         <label for="type">प्रकार</label>
     </div>
     <div class="col-2">
         <a rel="nofollow" href="http://naya.com.np"; title="Nepali Social Network" class="naya_convert">naya.com.np</a>
-        <input type="text" name="type" id="type" class="form-control" placeholder="प्रकार" min="1" @if(isset($road)) value="{{ $road->type }}" @endif required>
+        <input type="text" name="type" id="type" class="form-control" placeholder="प्रकार" min="0" @if(isset($road)) value="{{ $road->type }}" @endif required>
     </div>
     <div class="col-2 mt-2 text-right">
         <label for="population">लाभान्वित जनसंख्या</label>
     </div>
     <div class="col-2">
-        <input type="number" name="population" id="population" class="form-control" placeholder="लाभान्वित जनसंख्या" min="1" @if(isset($road)) value="{{ $road->population }}" @endif required>
+        <input type="number" name="population" id="population" class="form-control" placeholder="लाभान्वित जनसंख्या" min="0" @if(isset($road)) value="{{ $road->population }}" @endif required>
     </div>
 </div>
 <hr>
