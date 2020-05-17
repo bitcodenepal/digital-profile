@@ -41,7 +41,7 @@
                             </thead>
                             <tbody class="text-center">
                                 @php
-                                    $crop_area = $crop_production = $crop_sold = $pulse_area = $pulse_production = $pulse_sold = $oil_area = $oil_production = $oil_sold = $none = 0;
+                                    $crop_area = $crop_production = $crop_sold = $pulse_area = $pulse_production = $pulse_sold = $oil_area = $oil_production = $oil_sold = 0;
                                 @endphp
                                 @foreach ($crops as $crop)
                                     <tr>

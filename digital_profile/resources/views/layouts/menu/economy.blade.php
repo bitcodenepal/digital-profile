@@ -22,5 +22,10 @@
           <p>३. उद्योग सम्बन्धी विवरण</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('vocational.index') }}" class="nav-link {{ Request::is('*vocational*') ? "active" : "" }}">
+          <p>४. व्यवसायीक सीपमूलक तालिम</p>
+        </a>
+      </li>
     </ul>
 </li>
