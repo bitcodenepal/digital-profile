@@ -27,5 +27,10 @@
           <p>४. व्यवसायीक सीपमूलक तालिम</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('income.index') }}" class="nav-link {{ Request::is('*income*') ? "active" : "" }}">
+          <p>५. वार्षिक आम्दानी अनुसार</p>
+        </a>
+      </li>
     </ul>
 </li>

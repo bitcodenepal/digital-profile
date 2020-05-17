@@ -50,6 +50,7 @@ Route::prefix('economy')->group(function() {
     Route::resource('/special-education', 'Economy\SpecialEducationController');
     Route::resource('/industry', 'Economy\IndustryController');
     Route::resource('/vocational', 'Economy\VocationalController');
+    Route::resource('/income', 'Economy\IncomeController');
 });
 // end of economy routes
 
