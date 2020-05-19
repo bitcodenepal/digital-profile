@@ -62,6 +62,7 @@ Route::prefix('agriculture')->group(function() {
     Route::resource('/irrigation', 'Agriculture\IrrigationController');
     Route::resource('/crop', 'Agriculture\CropController');
     Route::resource('/fruit', 'Agriculture\FruitController');
+    Route::resource('/alternative', 'Agriculture\AlternativeController');
 });
 // end of agriculture routes
 

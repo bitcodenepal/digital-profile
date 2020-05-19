@@ -22,5 +22,10 @@
           <p>३. फलफुल, तरकारी र नगदे बाली</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('alternative.index') }}" class="nav-link {{ Request::is('*alternative*') ? "active" : "" }}">
+          <p>४. बैकल्पिक बाली सम्बन्धी</p>
+        </a>
+      </li>
     </ul>
 </li>
