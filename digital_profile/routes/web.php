@@ -63,6 +63,7 @@ Route::prefix('agriculture')->group(function() {
     Route::resource('/crop', 'Agriculture\CropController');
     Route::resource('/fruit', 'Agriculture\FruitController');
     Route::resource('/alternative', 'Agriculture\AlternativeController');
+    Route::resource('/dairy', 'Agriculture\DairyController');
 });
 // end of agriculture routes
 
@@ -133,3 +134,11 @@ Route::resource('/forest', 'ForestController');
 
 // ** communication route
 Route::resource('/communication', 'CommunicationController');
+
+/**
+ * Routes for export
+ */
+Route::prefix('export')->group(function() {
+    Route::post('/population-distribution', 'Population\PopulationDistributionController@exportPDF')->name('export.population-distribution');
+});
+// end of export

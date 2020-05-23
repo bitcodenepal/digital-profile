@@ -27,5 +27,10 @@
           <p>४. बैकल्पिक बाली सम्बन्धी</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{ route('dairy.index') }}" class="nav-link {{ Request::is('*dairy*') ? "active" : "" }}">
+          <p>५. पशुपालन तथा दुधजन्य उत्पादन</p>
+        </a>
+      </li>
     </ul>
 </li>
