@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('custom-styles')
+    <link rel="stylesheet" href="{{ asset('css/custom_css/dataTables.bootstrap.css') }}">
+@endsection
+
 @section('content-header')
     <div class="row mt-3 mb-3">
         <div class="col-6">
@@ -16,7 +20,18 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover table-bordered table-sm" id="table">
+                    <div class="row">
+                        <div class="col-6">
+                            {{-- <form action="{{ route('export.population-distribution') }}" method="post">
+                                @csrf
+                                <input type="submit" class="btn btn-link" value="pdf">
+                            </form> --}}
+                        </div>
+                        <div class="col-6 text-right mb-3" id="export-buttons">
+
+                        </div>
+                    </div>
+                    <table class="table table-hover table-bordered table-sm" id="distribution-table">
                         <thead class="text-center bg-gradient-danger">
                             <tr>
                                 <th rowspan="2">#</th>
@@ -99,8 +114,89 @@
 @endsection
 
 @section('custom-scripts')
+    <script src="{{ asset('js/custom_js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/dataTables.buttons.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/datatableButtons/buttons.bootstrap.min.js') }}"></script> --}}
+    <script src="{{ asset('js/datatableButtons/jszip.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/datatableButtons/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/vfs_fonts.js') }}"></script> --}}
+    <script src="{{ asset('js/datatableButtons/buttons.html5.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/datatableButtons/buttons.print.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/datatableButtons/buttons.colVis.min.js') }}"></script> --}}
+
     <script>
         jQuery(function($) {
+
+            let table = $('#distribution-table').DataTable();
+
+            new $.fn.dataTable.Buttons(table, {
+                buttons: [
+                    // {
+                    //     extend: 'pdfHtml5', 
+                    //     title: 'Collections List', 
+                    //     exportOptions: {
+                    //         columns: ':not(:last-child)',
+                    //         stripNewlines: false,
+                    //     },
+                    // },
+                    {
+                        extend: 'excelHtml5', 
+                        title: 'जनसंख्या वितरण', 
+                        className: "btn btn-xs btn-success",
+                        exportOptions: {
+                            columns: ':not(:last-child)',
+                        },
+                        footer: true,
+                        text: '<i class="fa fa-fw fa-file-excel"></i> एक्सेलको रूपमा डाउनलोड गर्नुहोस्'
+                    },
+                    // {
+                    //     extend: 'print', 
+                    //     title: 'Collections List', 
+                    //     exportOptions: {
+                    //         columns: ':not(:last-child)',
+                    //     },
+                    // },
+                ],
+            }).container().appendTo($('#export-buttons'));
+
+            // var newExportAction = function (e, dt, button, config) {
+            //     var self = this;
+            //     var oldStart = dt.settings()[0]._iDisplayStart;
+            //     dt.one('preXhr', function (e, s, data) {
+            //         $('#mainBox').addClass('box-loader');
+            //         $('#loader1').removeAttr('hidden');
+            //         data.start = 0;
+            //         dt.one('preDraw', function (e, settings) {
+            //             if(button[0].className=="btn btn-default buttons-pdf buttons-html5"){
+            //             $.each(settings.json.data, function(key, htmlContent){
+            //                 settings.json.data[key].id = key+1;
+            //                 settings.json.data[key].company_name = $(settings.json.data[key].company_name)[0].textContent;
+            //                 settings.json.data[key].employee_name = $(settings.json.data[key].employee_name)[0].textContent;
+            //             });
+            //             customExportAction(config, settings);
+            //             }else{
+            //             oldExportAction(self, e, dt, button, config);
+            //             }
+            //             // oldExportAction(self, e, dt, button, config);
+            //             dt.one('preXhr', function (e, s, data) {
+            //                 settings._iDisplayStart = oldStart;
+            //                 data.start = oldStart;
+            //                 $('#mainBox').removeClass('box-loader');
+            //                 $('#loader1').attr('hidden', 'hidden');
+            //             });
+            //             setTimeout(dt.ajax.reload, 0);
+            //             return false;
+            //         });
+            //     });
+            //     dt.ajax.reload();
+            // }
+
+            // function customExportAction(config, settings){
+            //     $('#exportedData').val(JSON.stringify(settings.json));
+            //     $('#pageTitle').val(config.title);
+            //     $('#pdf-generate').submit();
+            // }
 
             $("#create-detail").click(function() {
                 $.get("{{ route('distribution.create') }}", function(response) {

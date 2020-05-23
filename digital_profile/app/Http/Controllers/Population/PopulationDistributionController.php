@@ -8,6 +8,7 @@ use App\Population\PopulationDistribution;
 use App\Services\NumberConverter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Barryvdh\DomPDF\Facade as PDF;
 
 /**
  * class PopulationDistributionController
@@ -130,5 +131,14 @@ class PopulationDistributionController extends Controller
             return response("डाटा हटाउन असमर्थ");
         }
         
+    }
+
+    public function exportPDF() {
+        $populationDistributions = PopulationDistribution::all(); 
+        set_time_limit(300);
+        ini_set("memory_limit", "256M");
+        $pdf = PDF::loadView('population.population_distribution._exportPDF', compact('populationDistributions'))->setPaper('a4', 'portrait')->setOptions(['fontDir' => storage_path('fonts'), 'defaultFont' => 'Noto Sans']);
+        $download = $pdf->stream('जनसंख्या वितरण.pdf');
+        return $download;
     }
 }
