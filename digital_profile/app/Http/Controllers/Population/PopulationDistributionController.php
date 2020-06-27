@@ -130,15 +130,14 @@ class PopulationDistributionController extends Controller
         } else {
             return response("डाटा हटाउन असमर्थ");
         }
-        
+
     }
 
-    public function exportPDF() {
-        $populationDistributions = PopulationDistribution::all(); 
+    public function exportPDF(NumberConverter $numberConverter) {
+        $populationDistributions = PopulationDistribution::all();
         set_time_limit(300);
         ini_set("memory_limit", "256M");
-        $pdf = PDF::loadView('population.population_distribution._exportPDF', compact('populationDistributions'))->setPaper('a4', 'portrait')->setOptions(['fontDir' => storage_path('fonts'), 'defaultFont' => 'Noto Sans']);
-        $download = $pdf->stream('जनसंख्या वितरण.pdf');
-        return $download;
+        $pdf = PDF::loadView('population.population_distribution._exportPDF', compact('populationDistributions', 'numberConverter'))->setPaper('a4', 'portrait');
+        return $pdf->stream('population distribution.pdf');
     }
 }

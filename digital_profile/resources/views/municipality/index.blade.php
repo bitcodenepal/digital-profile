@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('custom-styles')
+    <link rel="stylesheet" href="{{ asset('css/custom_css/dataTables.bootstrap.css') }}">
+@endsection
+
 @section('content-header')
     <div class="row mt-3 mb-3">
         <div class="col-12">
@@ -40,10 +44,33 @@
 @section('custom-scripts')
 
     <script src="{{ asset('js/custom_js/nayaEN2NPinit.js') }}"></script>
+    <script src="{{ asset('js/custom_js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/jszip.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/buttons.html5.min.js') }}"></script>
 
     <script>
 
         jQuery(function() {
+
+            let table = $('#surface-table').DataTable();
+
+            new $.fn.dataTable.Buttons(table, {
+                buttons: [
+                    {
+                        extend: 'excelHtml5', 
+                        title: 'धरातलीय अवस्था', 
+                        className: "btn btn-xs btn-success",
+                        exportOptions: {
+                            columns: ':not(:last-child)',
+                        },
+                        footer: true,
+                        text: '<i class="fa fa-fw fa-file-excel"></i> एक्सेलको रूपमा डाउनलोड गर्नुहोस्'
+                    },
+                ],
+            }).container().appendTo($('#export-buttons'));
+
             $("#vert-tabs-home-tab").click(function(e) {
                 e.preventDefault();
                 location.href = "{{ route('municipality-surface.index') }}";
@@ -82,5 +109,7 @@
         });
 
     </script>
+
+    {{-- @yield('land-usage-script') --}}
 
 @endsection

@@ -16,7 +16,7 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-map-marker-alt"></i></span>
                 <div class="info-box-content">
@@ -24,9 +24,9 @@
                   <span class="info-box-text" style="font-size: 14px;"><b>26°48'41"N - 26°56'6"S</b></span>
                 </div>
                 <!-- /.info-box-content -->
-            </div>  
+            </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-compass"></i></span>
                 <div class="info-box-content">
@@ -36,7 +36,7 @@
                 <!-- /.info-box-content -->
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-map-marked-alt"></i></span>
                 <div class="info-box-content">
@@ -46,20 +46,20 @@
                 <!-- /.info-box-content -->
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-3">
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-sort-numeric-up-alt"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">उचाई</span>
-                  <span class="info-box-text">लगभग <b>84</b> देखि <b>94</b> मिटर</span>
+                    <span class="info-box-text">उचाई</span>
+                    <span class="info-box-text">लगभग <b>84</b> देखि <b>94</b> मिटर</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-cloud-sun"></i></span>
                 <div class="info-box-content">
@@ -69,25 +69,25 @@
                 <!-- /.info-box-content -->
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-8 col-md-4">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-home"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text" style="font-size: 14px;">साबिकका गाविस</span>
-                  <span class="info-box-text" style="font-size: 11px;"><b>कर्जनहा, बडहरामाल, काल्यानपुर,<br> कालाबन्जर र गौताडि</b></span>
+                  <span class="info-box-text">साबिकका गाविस</span>
+                  <span class="info-box-number" style="font-size: 10px;">कर्जनहा, बडहरामाल, काल्यानपुर, कालाबन्जर र गौताडि</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-6">
-            <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="fas fa-poll"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text" style="font-size: 14px;"><b>भू उपयोग (%) </b> = कृषि (59), खाली जमीन (0.08), जङ्गल (35.69), झाडी (0.3),<br> चरण (0.49), बगैचा (0.24), नदी-खोला (1.94), पोखरी-ताल (0.03), बगर (2.22)</span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-        </div>
+{{--        <div class="col-12 col-sm-6 col-md-6">--}}
+{{--            <div class="info-box">--}}
+{{--                <span class="info-box-icon bg-info"><i class="fas fa-poll"></i></span>--}}
+{{--                <div class="info-box-content">--}}
+{{--                  <span class="info-box-text" style="font-size: 14px;"><b>भू उपयोग (%) </b> = कृषि (59), खाली जमीन (0.08), जङ्गल (35.69), झाडी (0.3), चरण (0.49), बगैचा (0.24), नदी-खोला (1.94), पोखरी-ताल (0.03), बगर (2.22)</span>--}}
+{{--                </div>--}}
+{{--                <!-- /.info-box-content -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
     <br>
 
@@ -160,14 +160,24 @@
         </div>
         <div class="col-12 col-sm-6 col-md-6">
             <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="fas fa-balance-scale"></i></span>
+                <span class="info-box-icon bg-info"><i class="fas fa-users"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">उत्पादान (मे.ट)</span>
-                  <span class="info-box-text">खाद्यान्न: <b>203437.3</b>, मासु: <b>16716.8</b>, दूध: <b>2886</b></span>
+                    <span class="info-box-text"><b>उत्पादान (मे.ट): </b> <span style="font-size: 12px;">खाद्यान्न (203437.3), </span></span>
+                    <span class="info-box-text" style="font-size: 12px">मासु(16716.8), दूध (2886)</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
         </div>
+{{--        <div class="col-12 col-sm-6 col-md-6">--}}
+{{--            <div class="info-box">--}}
+{{--                <span class="info-box-icon bg-info"><i class="fas fa-balance-scale"></i></span>--}}
+{{--                <div class="info-box-content">--}}
+{{--                  <span class="info-box-text">उत्पादान (मे.ट)</span>--}}
+{{--                  <span class="info-box-text">खाद्यान्न: <b>203437.3</b>, मासु <b>16716.8</b>, दूध: <b>2886</b></span>--}}
+{{--                </div>--}}
+{{--                <!-- /.info-box-content -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-torii-gate"></i></span>
@@ -269,8 +279,8 @@
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-toilet"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text"><b>शौचालयको प्रयोग (%): </b></span>
-                  <span class="info-box-text">फ्लश भएको (28.21), साधारण (66.24), नभएको (5.12)</span>
+                    <span class="info-box-text"><b>शौचालयको प्रयोग (%): </b><span style="font-size: 12px;">फ्लश भएको</span></span>
+                    <span class="info-box-text" style="font-size: 12px">(28.21), साधारण (66.24), नभएको (5.12)</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -290,8 +300,8 @@
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-road"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text"><b>सडक (किमी): </b> <span style="font-size: 14px;">कालोपत्रे (11), ग्राभेल (49),</span></span>
-                    <span class="info-box-text" style="font-size: 14px">कच्चि (84.55), आरसीसी (0)</span>
+                    <span class="info-box-text"><b>सडक (किमी): </b> <span style="font-size: 14px;">कालोपत्रे (11), ग्राभेल</span></span>
+                    <span class="info-box-text" style="font-size: 14px">(49), कच्चि (84.55), आरसीसी (0)</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -300,8 +310,8 @@
             <div class="info-box">
                 <span class="info-box-icon bg-info"><i class="fas fa-charging-station"></i></span>
                 <div class="info-box-content">
-                    <span class="info-box-text"><b>बत्ती बाल्ने उर्जा उपयोग (%): </b> <span style="font-size: 14px;">विध्युत (95.80),</span></span>
-                    <span class="info-box-text" style="font-size: 14px">मट्टीतेल (3.60), सोलार (0.03), अन्य (0.50)</span>
+                    <span class="info-box-text"  style="font-size: 12px"><b>बत्ती बाल्ने उर्जा उपयोग (%): </b> <span style="font-size: 14px;">विध्युत (95.80),</span></span>
+                    <span class="info-box-number" style="font-size: 10px">मट्टीतेल (3.60), सोलार (0.03), अन्य (0.50)</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -317,18 +327,18 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-6">
-            <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="fas fa-dumpster-fire"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text"><b>खाना पकाउने उर्जा उपयोग (%):</b> <span style="font-size: 14px;">दाउरा(७९.०२), मट्टीतेल(०.१४),</span><br></span>
-                  <span class="info-box-text" style="font-size: 14px;">एलपी ग्यास(१८), गोबर ग्यास(०.३७), गुइठा(१.८३), विध्युत(०.०४), अन्य(०.५७)</span>
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-        </div>
-    </div>
+{{--    <div class="row">--}}
+{{--        <div class="col-12 col-sm-6 col-md-6">--}}
+{{--            <div class="info-box">--}}
+{{--                <span class="info-box-icon bg-info"><i class="fas fa-dumpster-fire"></i></span>--}}
+{{--                <div class="info-box-content">--}}
+{{--                  <span class="info-box-text"><b>खाना पकाउने उर्जा उपयोग (%):</b> <span style="font-size: 14px;">दाउरा(७९.०२), मट्टीतेल(०.१४),</span><br></span>--}}
+{{--                  <span class="info-box-text" style="font-size: 14px;">एलपी ग्यास(१८), गोबर ग्यास(०.३७), गुइठा(१.८३), विध्युत(०.०४), अन्य(०.५७)</span>--}}
+{{--                </div>--}}
+{{--                <!-- /.info-box-content -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="row">
         <div class="col-12 col-sm-6 col-md-12">
@@ -428,10 +438,10 @@
                         <img src="{{ asset('img/karjanha_satellite.png') }}" class="rounded mx-auto d-block" alt="GIS image" width="700" height="500">
                     </div>
                     <div class="tab-pane fade" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
-                        <img src="{{ asset('img/karjanha_gis.jpg') }}" class="rounded mx-auto d-block" alt="GIS image" width="700" height="500"> 
+                        <img src="{{ asset('img/karjanha_gis.jpg') }}" class="rounded mx-auto d-block" alt="GIS image" width="700" height="500">
                     </div>
                     <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
-                        <img src="{{ asset('img/karjanha_physical.png') }}" class="rounded mx-auto d-block" alt="GIS image"> 
+                        <img src="{{ asset('img/karjanha_physical.png') }}" class="rounded mx-auto d-block" alt="GIS image">
                     </div>
                   </div>
             </div>

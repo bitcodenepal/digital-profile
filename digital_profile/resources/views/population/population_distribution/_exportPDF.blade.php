@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
 
-    <title>जनसंख्या वितरण</title>
-    
-    {{-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans" rel="stylesheet">  --}}
-    <style>
-      *{
-        margin: 5px;
-        font-family: 'Noto Sans', sans-serif;
-      }
-      .text-center{
-        font-weight: 600;
-        color: #1a2b4c !important;
-      }
-      
-      table td,
-      table th {
-        -webkit-box-sizing: content-box;
-        box-sizing: content-box;
-        font-size: 12px;
-        text-align: left;
-        width: max-content;
-      }
+        <title>Karjanha Municipality::Population Distribution</title>
 
-      th {
-        background: #1a2b4c!important;
-        color: #fff!important; 
-      }
-    </style>
-  </head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-  <body>
-     
-    <h2 class="text-center">जनसंख्या वितरणको तालिका</h2>
-    
-    <section class="content">
-        <table id="order" class="table table-bordered table-striped">
-          <thead style="vertical-align: middle;">
-            <tr>
-                <th>S.No.</th>
-                <th rowspan="2">वडा नं</th>
-                <th rowspan="2">घरपरिवार</th>
-                <th colspan="3">जनसंख्या</th>
-                <th rowspan="2">औषत परिवार</th>
-                <th rowspan="2">लैंगिक अनुपात</th>
-            </tr>
-            <tr>
-                <th>जम्मा</th>
-                <th>पुरुष</th>
-                <th>महिला</th>
-            </tr>
-          </thead>
-          <tbody>
-            @if(!empty($populationDistributions))
-                @php($i=1)
-                @foreach ($populationDistributions as $populationDistribution)
-                    <tr>
-                        <td>{{ $i }}</td>
-                        <td>{{ $populationDistribution->ward_no }}</td>
-                        <td>{{ $populationDistribution->household_number }}</td>
-                        <td>{{ $populationDistribution->total }}</td>
-                        <td>{{ $populationDistribution->male_number }}</td>
-                        <td>{{ $populationDistribution->female_number }}</td>
-                        <td>{{ $populationDistribution->average_family }}</td>
-                        <td>{{ $populationDistribution->gender_ratio }}</td>
-                    </tr>
-                    @php($i++)
-                @endforeach
-            @endif
-          </tbody>
-        </table>
-    </section>
-    
-  </body>
+        <style>
+            body {
+                font-size: 14px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="{{ asset('img/nepal_logo.png') }}" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8; width: 40px; height: 40px;">
+                    <h4>Karjanha Municipality</h4>
+                    <p>Karjanha is a Municipality in Siraha District in the Province 2 of south-eastern Nepal</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+                <h5>Geographical Detail Table</h5>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered table-sm ">
+                    <thead class="bg-danger text-white">
+                        <tr>
+                            <th rowspan="2">Ward Number</th>
+                            <th rowspan="2">Families</th>
+                            <th colspan="3">Population</th>
+                            <th rowspan="2">Average Family</th>
+                            <th rowspan="2">Sex Ratio</th>
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <th>Male</th>
+                            <th>Female</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if(!empty($populationDistributions))
+                            @foreach ($populationDistributions as $populationDistribution)
+                                <tr>
+                                    <td>{{ $numberConverter->english($populationDistribution->ward_no) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->household_number) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->total) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->male_number) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->female_number) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->average_family) }}</td>
+                                    <td>{{ $numberConverter->english($populationDistribution->gender_ratio) }}</td>
+                                </tr>
+                            @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    </body>
 </html>

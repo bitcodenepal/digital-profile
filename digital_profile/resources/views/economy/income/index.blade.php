@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('custom-styles')
+    <link rel="stylesheet" href="{{ asset('css/custom_css/dataTables.bootstrap.css') }}">
+@endsection
+
 @section('content-header')
     <div class="row mt-3 mb-3">
         <div class="col-12 col-sm-9 col-md-9">
@@ -12,13 +16,23 @@
 @endsection
 
 @section('content')
-    
+
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6">
+{{--                            <a href="{{ route('export.population-distribution') }}" class="btn btn-xs btn-warning" target="_blank">--}}
+{{--                                <i class="fas fa-file-pdf fa-fw"></i> PDF को रूपमा डाउनलोड गर्नुहोस्--}}
+{{--                            </a>--}}
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 text-right mb-3" id="export-buttons">
+
+                        </div>
+                    </div>
                     <div class="table-responsive-sm">
-                        <table class="table table-hover table-bordered table-sm">
+                        <table class="table table-hover table-bordered table-sm" id="income-table">
                             <thead class="text-center bg-gradient-danger">
                                 <tr>
                                     <th>वडा नम्बर</th>
@@ -82,9 +96,32 @@
 
 @section('custom-scripts')
 
+    <script src="{{ asset('js/custom_js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/jszip.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/buttons.html5.min.js') }}"></script>
+
     <script>
 
         jQuery(function($) {
+            let table = $('#income-table').DataTable();
+
+            new $.fn.dataTable.Buttons(table, {
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'वार्षिक आम्दानी अनुसार घरपरिवारको विवरण',
+                        className: "btn btn-xs btn-success",
+                        exportOptions: {
+                            columns: ':not(:last-child)',
+                        },
+                        footer: true,
+                        text: '<i class="fa fa-fw fa-file-excel"></i> एक्सेलको रूपमा डाउनलोड गर्नुहोस्'
+                    },
+                ],
+            }).container().appendTo($('#export-buttons'));
+
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,

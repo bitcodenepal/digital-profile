@@ -21,59 +21,71 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover table-bordered table-sm" id="place-table">
-                        <thead class="text-center bg-gradient-danger">
-                            <tr>
-                                <th>#</th>
-                                <th>स्थलको नाम</th>
-                                <th>वडा नम्बर</th>
-                                <th>सडकको पहुँच</th>
-                                <th>नजिकको बजार केन्द्र सम्मको दुरी (किमी)</th>
-                                <th>स्वामित्व</th>
-                                <th>विशेषता</th>
-                                <th>वार्षिक पर्यटक आगमन संख्या</th>
-                                <th>कार्यहरु</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            @php
-                                $i = $distance = $economy = 0;
-                            @endphp
-                            @foreach ($places as $place)
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6">
+{{--                             <a href="{{ route('export.municipality-geography') }}" class="btn btn-xs btn-warning" target="_blank">--}}
+{{--                                 <i class="fas fa-file-pdf fa-fw"></i> PDF को रूपमा डाउनलोड गर्नुहोस्--}}
+{{--                             </a>--}}
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 text-right mb-3" id="export-buttons">
+
+                        </div>
+                    </div>
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover table-bordered table-sm" id="place-table">
+                            <thead class="text-center bg-gradient-danger">
                                 <tr>
-                                    <td>{{ ++$i }}</td>
-                                    <td>{{ $place->name }}</td>
-                                    <td>{{ $numberConverter->devanagari($place->ward_no) }}</td>
-                                    <td>{{ $place->availability }}</td>
-                                    <td>{{ $numberConverter->devanagari($place->distance) }} कि.मी.</td>
-                                    <td>{{ $place->allocation }}</td>
-                                    <td>{{ $place->importance }}</td>
-                                    <td>{{ $numberConverter->devanagari($place->economy) }}</td>
-                                    <td>
-                                        <a href="{{ route('place.edit', $place->id) }}" class="btn btn-xs btn-primary edit-detail" title="सम्पादन गर्नुहोस्"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-xs btn-danger delete-detail" title="हटाउनुहोस्" data-id={{ $place->id }}><i class="fas fa-trash"></i></button>
-                                    </td>
+                                    <th>#</th>
+                                    <th>स्थलको नाम</th>
+                                    <th>वडा नम्बर</th>
+                                    <th>सडकको पहुँच</th>
+                                    <th>नजिकको बजार केन्द्र सम्मको दुरी (किमी)</th>
+                                    <th>स्वामित्व</th>
+                                    <th>विशेषता</th>
+                                    <th>वार्षिक पर्यटक आगमन संख्या</th>
+                                    <th>कार्यहरु</th>
                                 </tr>
+                            </thead>
+                            <tbody class="text-center">
                                 @php
-                                    $distance += $place->distance;
-                                    $economy += $place->economy;
+                                    $i = $distance = $economy = 0;
                                 @endphp
-                            @endforeach
-                        </tbody>
-                        <tfoot class="text-center bg-gradient-secondary">
-                            <tr>
-                                <td></td>
-                                <td>जम्मा</td>
-                                <td></td>
-                                <td></td>
-                                <td>{{ $numberConverter->devanagari($distance) }} कि.मी.</td>
-                                <td></td>
-                                <td></td>
-                                <td>{{ $numberConverter->devanagari($economy) }}</td>
-                                <td></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                @foreach ($places as $place)
+                                    <tr>
+                                        <td>{{ ++$i }}</td>
+                                        <td>{{ $place->name }}</td>
+                                        <td>{{ $numberConverter->devanagari($place->ward_no) }}</td>
+                                        <td>{{ $place->availability }}</td>
+                                        <td>{{ $numberConverter->devanagari($place->distance) }} कि.मी.</td>
+                                        <td>{{ $place->allocation }}</td>
+                                        <td>{{ $place->importance }}</td>
+                                        <td>{{ $numberConverter->devanagari($place->economy) }}</td>
+                                        <td>
+                                            <a href="{{ route('place.edit', $place->id) }}" class="btn btn-xs btn-primary edit-detail" title="सम्पादन गर्नुहोस्"><i class="fas fa-edit"></i></a>
+                                            <button class="btn btn-xs btn-danger delete-detail" title="हटाउनुहोस्" data-id={{ $place->id }}><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    @php
+                                        $distance += $place->distance;
+                                        $economy += $place->economy;
+                                    @endphp
+                                @endforeach
+                            </tbody>
+                            <tfoot class="text-center bg-gradient-secondary">
+                                <tr>
+                                    <td></td>
+                                    <td>जम्मा</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ $numberConverter->devanagari($distance) }} कि.मी.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ $numberConverter->devanagari($economy) }}</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,12 +97,30 @@
 
     <script src="{{ asset('js/custom_js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/custom_js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/jszip.min.js') }}"></script>
+    <script src="{{ asset('js/datatableButtons/buttons.html5.min.js') }}"></script>
 
     <script>
 
         jQuery(function($) {
 
-            $("#place-table").DataTable();
+            let table = $('#place-table').DataTable();
+
+            new $.fn.dataTable.Buttons(table, {
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'पर्यटकीय स्थलहरुको विवरण',
+                        className: "btn btn-xs btn-success",
+                        exportOptions: {
+                            columns: ':not(:last-child)',
+                        },
+                        footer: true,
+                        text: '<i class="fa fa-fw fa-file-excel"></i> एक्सेलको रूपमा डाउनलोड गर्नुहोस्'
+                    },
+                ],
+            }).container().appendTo($('#export-buttons'));
 
             $(".delete-detail").click(function() {
                 if (confirm("के तपाईं यो विवरण निश्चय हटाउन चाहानुहुन्छ?")) {

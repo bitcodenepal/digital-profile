@@ -139,6 +139,8 @@ Route::resource('/communication', 'CommunicationController');
  * Routes for export
  */
 Route::prefix('export')->group(function() {
-    Route::post('/population-distribution', 'Population\PopulationDistributionController@exportPDF')->name('export.population-distribution');
+    Route::get('/population-distribution', 'Population\PopulationDistributionController@exportPDF')->name('export.population-distribution');
+    Route::get('/municipality-geography', 'Municipality\SurfaceController@exportPDF')->name('export.municipality-geography');
+    Route::get('/municipality-surface', 'Municipality\SurfaceController@exportPDFSurface')->name('export.municipality-surface');
 });
 // end of export

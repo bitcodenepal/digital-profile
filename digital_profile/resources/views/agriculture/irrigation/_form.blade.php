@@ -1,15 +1,15 @@
 <div class="form-group row">
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="name">सिंचाइ सुबिधा वा आयोजनाको नाम</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <a rel="nofollow" href="http://naya.com.np"; title="Nepali Social Network" class="naya_convert">naya.com.np</a>
         <input type="text" class="form-control" id="name" placeholder="सिंचाइ सुबिधा वा आयोजनाको नाम"  name="name" min="0" @if(isset($irrigation)) value="{{ $irrigation->name }}" @endif required>
     </div>
-    <div class="col-2 mt-2 text-right">
+    <div class="col-12 col-sm-6 col-md-2 mt-2 text-right">
         <label for="ward-no">वडा नम्बर</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <select name="ward_no" id="ward-no" class="form-control">
             <option value="1" {{ (isset($irrigation) && $irrigation->ward_no == "1") ? "selected" : "" }}>१</option>
             <option value="2" {{ (isset($irrigation) && $irrigation->ward_no == "2") ? "selected" : "" }}>२</option>
@@ -24,10 +24,10 @@
             <option value="11" {{ (isset($irrigation) && $irrigation->ward_no == "11") ? "selected" : "" }}>११</option>
         </select>
     </div>
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="type">सिंचाइको किसिम</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <select name="type" id="type" class="form-control">
             <option value="कुलो" {{ (isset($irrigation) && $irrigation->type == "कुलो") ? "selected" : "" }}>कुलो</option>
             <option value="पाईप" {{ (isset($irrigation) && $irrigation->type == "पाईप") ? "selected" : "" }}>पाईप</option>
@@ -38,23 +38,23 @@
 <br>
 
 <div class="form-group row">
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="unit">स्रोतको इकाई</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <a rel="nofollow" href="http://naya.com.np"; title="Nepali Social Network" class="naya_convert">naya.com.np</a>
         <input type="text" class="form-control" id="unit" placeholder="स्रोतको इकाई"  name="unit" min="0" @if(isset($irrigation)) value="{{ $irrigation->unit }}" @endif required>
     </div>
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="quantity">स्रोतको परिमाण</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <input type="number" class="form-control" id="quantity" placeholder="स्रोतको परिमाण"  name="quantity" min="0" @if(isset($irrigation)) value="{{ $irrigation->quantity }}" @endif required>
     </div>
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="availability">सिंचाइको उपलब्धता</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <select name="availability" id="availability" class="form-control">
             <option value="वर्षभरी" {{ (isset($irrigation) && $irrigation->availability == "वर्षभरी") ? "selected" : "" }}>वर्षभरी</option>
             <option value="मौसमी" {{ (isset($irrigation) && $irrigation->availability == "मौसमी") ? "selected" : "" }}>मौसमी</option>
@@ -64,10 +64,10 @@
 <br>
 
 <div class="form-group row">
-    <div class="col-2 text-right mt-2">
+    <div class="col-12 col-sm-6 col-md-2 text-right mt-2">
         <label for="beneficial">लाभान्वित घरधुरी</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-6 col-md-2">
         <input type="number" class="form-control" id="beneficial" placeholder="लाभान्वित घरधुरी"  name="beneficial" min="0" @if(isset($irrigation)) value="{{ $irrigation->beneficial }}" @endif required>
     </div>
 </div>

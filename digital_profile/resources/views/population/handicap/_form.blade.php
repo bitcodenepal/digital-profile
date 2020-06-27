@@ -1,8 +1,8 @@
 <div class="form-group row">
-    <div class="col-2 mt-2">
+    <div class="col-12 col-sm-4 col-md-2 mt-2">
         <label for="ward-no">वडा नं छनौट गर्नुहोस्</label>
     </div>
-    <div class="col-4">
+    <div class="col-12 col-sm-8 col-md-4">
         <select name="ward_no" id="ward-no" class="form-control">
             <option value="1" {{ (isset($handicap) && $handicap->ward_no == "1") ? "selected" : "" }}>१</option>
             <option value="2" {{ (isset($handicap) && $handicap->ward_no == "2") ? "selected" : "" }}>२</option>
@@ -21,55 +21,55 @@
 <hr>
 
 <div class="form-group row">
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="physical">शारिरीक अपाङ्गता</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="physical" placeholder="जनसंख्या लेख्नुहोस्"  name="physical" min="0" @if(isset($handicap)) value="{{ $handicap->physical }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="mental">बौद्विक अपाङ्गता</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="mental" placeholder="जनसंख्या लेख्नुहोस्"  name="mental" min="0" @if(isset($handicap)) value="{{ $handicap->mental }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="blind">आँखा नदेख्ने</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="blind" placeholder="जनसंख्या लेख्नुहोस्"  name="blind" min="0" @if(isset($handicap)) value="{{ $handicap->blind }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="deaf">कान नसुन्ने</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="deaf" placeholder="जनसंख्या लेख्नुहोस्"  name="deaf" min="0" @if(isset($handicap)) value="{{ $handicap->deaf }}" @endif required>
     </div>
 </div>
 
 <div class="form-group row">
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="dumb">बोली अक्मकिने</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="dumb" placeholder="जनसंख्या लेख्नुहोस्"  name="dumb" min="0" @if(isset($handicap)) value="{{ $handicap->dumb }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="psycho">मनोसामाजिक अपाङ्गता</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="psycho" placeholder="जनसंख्या लेख्नुहोस्"  name="psycho" min="0" @if(isset($handicap)) value="{{ $handicap->psycho }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="healthy">अपाङ्ग नभएको</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="healthy" placeholder="जनसंख्या लेख्नुहोस्"  name="healthy" min="0" @if(isset($handicap)) value="{{ $handicap->healthy }}" @endif required>
     </div>
-    <div class="col-1 text-right mt-2">
+    <div class="col-12 col-sm-2 col-md-1 text-right mt-2">
         <label for="not-included">उल्लेख नभएको</label>
     </div>
-    <div class="col-2">
+    <div class="col-12 col-sm-4 col-md-2">
         <input type="number" class="form-control" id="not-included" placeholder="जनसंख्या लेख्नुहोस्"  name="not_included" min="0" @if(isset($handicap)) value="{{ $handicap->not_included }}" @endif required>
     </div>
 </div>

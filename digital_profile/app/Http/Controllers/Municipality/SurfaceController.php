@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Municipality\SurfaceRequest;
 use App\Municipality\Surface;
 use App\Services\NumberConverter;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 /**
  * class SurfaceController
- * 
+ *
  * @package: App\Http\Controllers\Municipality
  * @author: Shashank Jha <shashankj677@gmail.com>
  */
@@ -75,7 +76,7 @@ class SurfaceController extends Controller
         if($surface) {
             try {
                 DB::beginTransaction();
-    
+
                 $surface->ward_no = $numberConverter->devanagari($request->ward_no);
                 $surface->unit = $request->unit;
                 $surface->first = $numberConverter->devanagari($request->first);
@@ -83,9 +84,9 @@ class SurfaceController extends Controller
                 $surface->third = $numberConverter->devanagari($request->third);
                 $surface->fourth = $numberConverter->devanagari($request->fourth);
                 $surface->save();
-    
+
                 DB::commit();
-    
+
                 Session::flash('success', "विवरण सफलतापूर्वक परिवर्तन गरियो");
                 return redirect()->route('municipality-surface.index');
             } catch (\Exception $error) {
@@ -106,5 +107,20 @@ class SurfaceController extends Controller
         } else {
             return response("डाटा हटाउन असमर्थ");
         }
+    }
+
+    public function exportPDF() {
+        set_time_limit(300);
+        ini_set("memory_limit", "256M");
+        $pdf = PDF::loadView('municipality._exportPDF')->setPaper('a4', 'portrait');
+        return $pdf->stream('geography.pdf');
+    }
+
+    public function exportPDFSurface(NumberConverter $numberConverter) {
+        $surfaces = Surface::all();
+        set_time_limit(300);
+        ini_set("memory_limit", "256M");
+        $pdf = PDF::loadView('municipality.surface._exportPDF', compact('surfaces', 'numberConverter'))->setPaper('a4', 'portrait');
+        return $pdf->stream('municipality surface.pdf');
     }
 }
