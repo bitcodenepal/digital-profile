@@ -16,6 +16,14 @@
                 </a>
               </li>
               @include('layouts.menu.municipality')
+              <li class="nav-item">
+                <a href="{{ route('survey-data.index') }}" class="nav-link {{ Request::is('survey-data*') ? "active" : "" }}">
+                  <i class="nav-icon fas fa-poll"></i>
+                  <p>
+                    सर्वेक्षणबाट लिइएको डाटा
+                  </p>
+                </a>
+              </li>
               @include('layouts.menu.population')
               @include('layouts.menu.economy')
               @include('layouts.menu.agriculture')

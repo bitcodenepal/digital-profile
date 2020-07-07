@@ -27,6 +27,15 @@ Route::get('/municipality-land-usage/delete/{id}', 'Municipality\LandUsageContro
 // end of municipality routes
 
 /**
+ * Routes for Survey Data tabs
+ */
+Route::match(['get', 'post'], '/survey-data', 'SurveyDataController@index')->name('survey-data.index');
+Route::match(['get', 'post'], '/survey-data/{id}', 'SurveyDataController@show')->name('survey-data.show');
+// Route::resource('/survey-data', 'SurveyDataController');
+Route::post('/survey/get-locality/{wardNo}', 'SurveyDataController@getLocality')->name('get.locality');
+// end of Survey Data routes
+
+/**
  * Routes for population tab
  */
 Route::prefix('population')->group(function() {
